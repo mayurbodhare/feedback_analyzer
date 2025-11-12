@@ -78,25 +78,21 @@ async def upload_spreadsheet(
         # 5. Enqueue processing task
         task = process_spreadsheet_task.delay(file_path, email)
 
-        # 6. Send Email to the User
-        try:
-            send_task_email(email_to=email, task_id=task.id)
-        except HTTPException:
-            # Re-raise if it's already an HTTP exception
-            raise
-        
-        except Exception as e:
-            # Fallback for unexpected errors
-            print(f"Unexpected email error: {e}")
-            raise HTTPException(status_code=500, detail="Failed to send confirmation email.")
+        # # 6. Send Email to the User
+        # try:
+        #     send_task_email(to_email=email, task_id=task.id)
+        # except HTTPException:
+        #     # Re-raise if it's already an HTTP exception
+        #     raise
+        # except Exception as e:
+        #     # Fallback for unexpected errors
+        #     print(f"Unexpected email error: {e}")
+        #     raise HTTPException(status_code=500, detail="Failed to send confirmation email.")
 
         # 7. Return the Result
         return {
-            "email": email,                    
+            "email": email,
             "filename": file.filename,
-            "extension": ext,
-            "detected_mime": detected_mime,
-            "file_size_bytes": file.size,
-            "saved_at": file_path,
-            "task_id": task.id, 
+            "task_id": task.id,
+            "message": "File uploaded and processing started. Check your email for the task ID."
         }

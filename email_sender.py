@@ -34,3 +34,4 @@ def send_task_email(email_to: str, task_id: str):
         # Log error in production; don't expose to user
         print(f"Failed to send email to {email_to}: {e}")
         raise HTTPException(status_code=500, detail="Failed to send confirmation email.")
+    
