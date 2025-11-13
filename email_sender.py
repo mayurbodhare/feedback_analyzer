@@ -1,37 +1,67 @@
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+import httpx
+import logging
 from fastapi import HTTPException
 from config import settings
 
-def send_task_email(email_to: str, task_id: str):
+logger = logging.getLogger(__name__)
+
+
+async def send_task_email(email_to: str, file_name: str, task_id: str):
     """
-    Sends a simple email with the task ID.
-    Configure SMTP settings below.
+    Sends a simple email with the task ID using Brevo (Sendinblue) API (async).
+    Ensure Brevo API key is configured in settings.BREVO_API_KEY.
     """
-    SMTP_SERVER = "smtp.gmail.com"  # e.g., for Gmail
-    SMTP_PORT = 587
-    SMTP_USERNAME = settings.SMTP_USERNAME  # e.g., your_email@gmail.com
-    SMTP_PASSWORD = settings.SMTP_PASSWORD  # app password if using Gmail
+    BREVO_API_KEY = settings.BREVO_API_KEY
+    SENDER_EMAIL = settings.SENDER_EMAIL
 
-    if not SMTP_USERNAME or not SMTP_PASSWORD:
-        raise RuntimeError("SMTP credentials not configured in environment variables.")
+    if not BREVO_API_KEY:
+        logger.error("Brevo API key is missing in settings.")
+        raise RuntimeError("Brevo API key not configured in environment variables.")
 
-    msg = MIMEMultipart()
-    msg["From"] = SMTP_USERNAME
-    msg["To"] = email_to
-    msg["Subject"] = "Your Spreadsheet Processing Task ID"
+    subject = "Your Spreadsheet Processing Task ID"
+    body = (
+        f"Your file: {file_name} has been uploaded successfully. Your task ID is:\n\n{task_id}\n\n"
+        f"You can use this ID to check the status of your processing job."
+    )
 
-    body = f"Your file has been uploaded successfully. Your task ID is:\n\n{task_id}\n\nYou can use this ID to check the status of your processing job."
-    msg.attach(MIMEText(body, "plain"))
+    headers = {"api-key": BREVO_API_KEY, "Content-Type": "application/json"}
+
+    data = {
+        "sender": {"email": SENDER_EMAIL},
+        "to": [{"email": email_to}],
+        "subject": subject,
+        "textContent": body,
+    }
+
+    logger.info(
+        f"Attempting to send email to {email_to} for task {task_id} (file: {file_name})"
+    )
 
     try:
-        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
-            server.starttls()  # Enable security
-            server.login(SMTP_USERNAME, SMTP_PASSWORD)
-            server.send_message(msg)
-    except Exception as e:
-        # Log error in production; don't expose to user
-        print(f"Failed to send email to {email_to}: {e}")
-        raise HTTPException(status_code=500, detail="Failed to send confirmation email.")
-    
+        async with httpx.AsyncClient() as client:
+            response = await client.post(
+                "https://api.brevo.com/v3/smtp/email",
+                headers=headers,
+                json=data,
+                timeout=20.0,
+            )
+            response.raise_for_status()
+        logger.info(f"Email successfully sent to {email_to} for task {task_id}")
+    except httpx.RequestError as e:
+        # Network-level error (e.g., DNS failure, refused connection)
+        logger.error(
+            f"Network error while sending email to {email_to}: {e}", exc_info=True
+        )
+        raise HTTPException(
+            status_code=500, detail="Failed to send confirmation email."
+        )
+    except httpx.HTTPStatusError as e:
+        # HTTP error (e.g., 4xx, 5xx)
+        logger.error(
+            f"Brevo API returned error {e.response.status_code}: {e.response.text} "
+            f"for email to {email_to}, task {task_id}",
+            exc_info=True,
+        )
+        raise HTTPException(
+            status_code=500, detail="Failed to send confirmation email."
+        )

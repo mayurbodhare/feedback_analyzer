@@ -1,0 +1,1511 @@
+2025-11-13 09:52:08 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+2025-11-13 09:52:08 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+2025-11-13 09:52:08 | [32m[1mINFO    [0m | main                 | ==================================================
+2025-11-13 09:52:08 | [32m[1mINFO    [0m | main                 | ==================================================
+2025-11-13 09:52:08 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+2025-11-13 09:52:08 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+2025-11-13 09:52:08 | [32m[1mINFO    [0m | main                 | Environment: development
+2025-11-13 09:52:08 | [32m[1mINFO    [0m | main                 | Environment: development
+2025-11-13 09:52:08 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+2025-11-13 09:52:08 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+2025-11-13 09:52:08 | [32m[1mINFO    [0m | main                 | ==================================================
+2025-11-13 09:52:08 | [32m[1mINFO    [0m | main                 | ==================================================
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | routes               | Upload request received - filename: llm_evaluation_template.xlsx, email: mrbodhre7@gmail.com
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | routes               | Upload request received - filename: llm_evaluation_template.xlsx, email: mrbodhre7@gmail.com
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/llm_evaluation_template.xlsx
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/llm_evaluation_template.xlsx
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/llm_evaluation_template.xlsx
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/llm_evaluation_template.xlsx
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: llm_evaluation_template.xlsx
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: llm_evaluation_template.xlsx
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 14d462bc-db1e-4a1d-9c5c-f8d9a22cf326, file: llm_evaluation_template.xlsx
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 14d462bc-db1e-4a1d-9c5c-f8d9a22cf326, file: llm_evaluation_template.xlsx
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: 14d462bc-db1e-4a1d-9c5c-f8d9a22cf326
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: 14d462bc-db1e-4a1d-9c5c-f8d9a22cf326
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | email_sender         | Attempting to send email to mrbodhre7@gmail.com for task 14d462bc-db1e-4a1d-9c5c-f8d9a22cf326 (file: llm_evaluation_template.xlsx)
+2025-11-13 09:52:21 | [32m[1mINFO    [0m | email_sender         | Attempting to send email to mrbodhre7@gmail.com for task 14d462bc-db1e-4a1d-9c5c-f8d9a22cf326 (file: llm_evaluation_template.xlsx)
+2025-11-13 09:52:23 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+2025-11-13 09:52:23 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+2025-11-13 09:52:23 | [32m[1mINFO    [0m | email_sender         | Email successfully sent to mrbodhre7@gmail.com for task 14d462bc-db1e-4a1d-9c5c-f8d9a22cf326
+2025-11-13 09:52:23 | [32m[1mINFO    [0m | email_sender         | Email successfully sent to mrbodhre7@gmail.com for task 14d462bc-db1e-4a1d-9c5c-f8d9a22cf326
+2025-11-13 09:52:23 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+2025-11-13 09:52:23 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+2025-11-13 09:52:23 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: llm_evaluation_template.xlsx, task_id: 14d462bc-db1e-4a1d-9c5c-f8d9a22cf326, email: mrbodhre7@gmail.com
+2025-11-13 09:52:23 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: llm_evaluation_template.xlsx, task_id: 14d462bc-db1e-4a1d-9c5c-f8d9a22cf326, email: mrbodhre7@gmail.com
+2025-11-13 09:52:23 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+2025-11-13 09:52:23 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+2025-11-13 09:53:14 | [32m[1mINFO    [0m | main                 | Shutting down application
+2025-11-13 09:53:14 | [32m[1mINFO    [0m | main                 | Shutting down application
+2025-11-13 09:53:17 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+2025-11-13 09:53:17 | [32m[1mINFO    [0m | main                 | ==================================================
+2025-11-13 09:53:17 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+2025-11-13 09:53:17 | [32m[1mINFO    [0m | main                 | Environment: development
+2025-11-13 09:53:17 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+2025-11-13 09:53:17 | [32m[1mINFO    [0m | main                 | ==================================================
+2025-11-13 09:56:40 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 09:56:43 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 09:56:43 | [32m[1mINFO    [0m | main                 | ==================================================
+
+2025-11-13 09:56:43 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 09:56:43 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 09:56:43 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 09:56:43 | [32m[1mINFO    [0m | main                 | ==================================================
+
+2025-11-13 09:57:14 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-13 09:57:15 | [32m[1mINFO    [0m | routes               | Upload request received - filename: llm_evaluation_template.xlsx, email: mrbodhre7@gmail.com
+
+2025-11-13 09:57:15 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/llm_evaluation_template.xlsx
+
+2025-11-13 09:57:15 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/llm_evaluation_template.xlsx
+
+2025-11-13 09:57:15 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: llm_evaluation_template.xlsx
+
+2025-11-13 09:57:15 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 5036c5fe-d231-48e8-8f2c-7f51249e1fe2, file: llm_evaluation_template.xlsx
+
+2025-11-13 09:57:15 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: 5036c5fe-d231-48e8-8f2c-7f51249e1fe2
+
+2025-11-13 09:57:15 | [32m[1mINFO    [0m | email_sender         | Attempting to send email to mrbodhre7@gmail.com for task 5036c5fe-d231-48e8-8f2c-7f51249e1fe2 (file: llm_evaluation_template.xlsx)
+
+2025-11-13 09:57:17 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-13 09:57:17 | [32m[1mINFO    [0m | email_sender         | Email successfully sent to mrbodhre7@gmail.com for task 5036c5fe-d231-48e8-8f2c-7f51249e1fe2
+
+2025-11-13 09:57:17 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-13 09:57:17 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: llm_evaluation_template.xlsx, task_id: 5036c5fe-d231-48e8-8f2c-7f51249e1fe2, email: mrbodhre7@gmail.com
+
+2025-11-13 09:57:17 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-13 09:58:12 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 09:58:15 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 09:58:15 | [32m[1mINFO    [0m | main                 | ==================================================
+
+2025-11-13 09:58:15 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 09:58:15 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 09:58:15 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 09:58:15 | [32m[1mINFO    [0m | main                 | ==================================================
+
+2025-11-13 09:58:34 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 09:58:37 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 09:58:37 | [32m[1mINFO    [0m | main                 | ==================================================
+
+2025-11-13 09:58:37 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 09:58:37 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 09:58:37 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 09:58:37 | [32m[1mINFO    [0m | main                 | ==================================================
+
+2025-11-13 09:58:37 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 09:58:54 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 09:58:56 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 09:58:56 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 09:58:56 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 09:58:56 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 09:58:56 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 09:59:29 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 09:59:31 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 09:59:31 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 09:59:31 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 09:59:31 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 09:59:31 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 09:59:53 | [32m[1mINFO    [0m | main                 | Incoming request: GET /health
+
+2025-11-13 09:59:53 | [32m[1mINFO    [0m | main                 | Request completed: GET /health - Status: 200
+
+2025-11-13 10:00:54 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:00:56 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:00:56 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:00:56 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:00:56 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:00:56 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:01:35 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:01:38 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:01:38 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:01:38 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:01:38 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:01:38 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:02:07 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:02:10 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:02:10 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:02:10 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:02:10 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:02:10 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:02:25 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:02:28 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:02:28 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:02:28 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:02:28 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:02:28 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:02:28 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:02:28 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:02:28 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:02:28 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:02:28 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:03:09 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-11-13 10:03:09 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-11-13 10:03:09 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-11-13 10:03:09 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-11-13 10:03:09 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-11-13 10:03:09 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-11-13 10:03:09 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-11-13 10:03:09 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | routes               | Upload request received - filename: To-do list.xlsx, email: mayur.bodhare@tcs.com
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | routes               | Upload request received - filename: To-do list.xlsx, email: mayur.bodhare@tcs.com
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/To-do list.xlsx
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/To-do list.xlsx
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/To-do list.xlsx
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/To-do list.xlsx
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: To-do list.xlsx
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: To-do list.xlsx
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: f2651b49-d391-4404-8588-ffd06ee07640, file: To-do list.xlsx
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: f2651b49-d391-4404-8588-ffd06ee07640, file: To-do list.xlsx
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mayur.bodhare@tcs.com, task_id: f2651b49-d391-4404-8588-ffd06ee07640
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mayur.bodhare@tcs.com, task_id: f2651b49-d391-4404-8588-ffd06ee07640
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | email_sender         | Attempting to send email to mayur.bodhare@tcs.com for task f2651b49-d391-4404-8588-ffd06ee07640 (file: To-do list.xlsx)
+
+2025-11-13 10:03:31 | [32m[1mINFO    [0m | email_sender         | Attempting to send email to mayur.bodhare@tcs.com for task f2651b49-d391-4404-8588-ffd06ee07640 (file: To-do list.xlsx)
+
+2025-11-13 10:03:33 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-13 10:03:33 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-13 10:03:33 | [32m[1mINFO    [0m | email_sender         | Email successfully sent to mayur.bodhare@tcs.com for task f2651b49-d391-4404-8588-ffd06ee07640
+
+2025-11-13 10:03:33 | [32m[1mINFO    [0m | email_sender         | Email successfully sent to mayur.bodhare@tcs.com for task f2651b49-d391-4404-8588-ffd06ee07640
+
+2025-11-13 10:03:33 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mayur.bodhare@tcs.com
+
+2025-11-13 10:03:33 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mayur.bodhare@tcs.com
+
+2025-11-13 10:03:33 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: To-do list.xlsx, task_id: f2651b49-d391-4404-8588-ffd06ee07640, email: mayur.bodhare@tcs.com
+
+2025-11-13 10:03:33 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: To-do list.xlsx, task_id: f2651b49-d391-4404-8588-ffd06ee07640, email: mayur.bodhare@tcs.com
+
+2025-11-13 10:03:33 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-13 10:03:33 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-13 10:04:27 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:04:27 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:04:30 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:04:30 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:04:30 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:04:30 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:04:30 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:04:30 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:04:30 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:04:30 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:04:30 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:04:30 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:10:00 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:10:00 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:10:02 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:10:02 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:10:02 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:10:02 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:10:02 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:10:02 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:10:02 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:10:02 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:10:02 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:10:02 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:10:33 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-11-13 10:10:33 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-11-13 10:10:33 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-11-13 10:10:33 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-11-13 10:10:34 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-11-13 10:10:34 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-11-13 10:10:34 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-11-13 10:10:34 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-11-13 10:12:03 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/2651b49-d391-4404-8588-ffd06ee07640
+
+2025-11-13 10:12:03 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/2651b49-d391-4404-8588-ffd06ee07640
+
+2025-11-13 10:12:04 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/2651b49-d391-4404-8588-ffd06ee07640 - Status: 200
+
+2025-11-13 10:12:04 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/2651b49-d391-4404-8588-ffd06ee07640 - Status: 200
+
+2025-11-13 10:12:34 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/f2651b49-d391-4404-8588-ffd06ee07640
+
+2025-11-13 10:12:34 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/f2651b49-d391-4404-8588-ffd06ee07640
+
+2025-11-13 10:12:34 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/f2651b49-d391-4404-8588-ffd06ee07640 - Status: 200
+
+2025-11-13 10:12:34 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/f2651b49-d391-4404-8588-ffd06ee07640 - Status: 200
+
+2025-11-13 10:12:36 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/f2651b49-d391-4404-8588-ffd06ee07640
+
+2025-11-13 10:12:36 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/f2651b49-d391-4404-8588-ffd06ee07640
+
+2025-11-13 10:12:36 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/f2651b49-d391-4404-8588-ffd06ee07640 - Status: 200
+
+2025-11-13 10:12:36 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/f2651b49-d391-4404-8588-ffd06ee07640 - Status: 200
+
+2025-11-13 10:12:51 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:12:51 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:12:53 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:12:53 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:12:53 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:12:53 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:12:53 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:12:53 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:12:53 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:12:53 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:12:53 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:12:53 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:14:23 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:14:23 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:14:25 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:14:25 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:14:25 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:14:25 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:14:25 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:14:25 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:14:25 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:14:25 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:14:25 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:14:25 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:14:25 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:14:25 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:14:25 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:14:25 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:14:25 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:15:11 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:15:11 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:15:11 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:15:13 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:15:13 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:15:13 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:15:13 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:15:13 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:15:13 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:15:13 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:15:13 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:15:13 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:15:13 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:15:34 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:15:34 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:15:36 | [32m[1mINFO    [0m | root                 | API routes registered at /api/v1
+
+2025-11-13 10:15:36 | [32m[1mINFO    [0m | root                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:15:36 | [32m[1mINFO    [0m | root                 | Environment: development
+
+2025-11-13 10:15:36 | [32m[1mINFO    [0m | root                 | Allowed origins: ['*']
+
+2025-11-13 10:15:36 | [32m[1mINFO    [0m | root                 | Application started
+
+2025-11-13 10:17:12 | [32m[1mINFO    [0m | root                 | Shutting down application
+
+2025-11-13 10:17:14 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:17:14 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:17:14 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:17:14 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:17:14 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:17:58 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:18:00 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:18:00 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:18:00 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:18:00 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:18:00 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:18:41 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-13 10:18:41 | [32m[1mINFO    [0m | routes               | Upload request received - filename: To-do list.xlsx, email: mrbodhre7@gmail.com
+
+2025-11-13 10:18:41 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/To-do list.xlsx
+
+2025-11-13 10:18:41 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/To-do list.xlsx
+
+2025-11-13 10:18:41 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: To-do list.xlsx
+
+2025-11-13 10:18:41 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: cddb400f-4ce5-4c47-9bd2-08e7b44d3bac, file: To-do list.xlsx
+
+2025-11-13 10:18:41 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:18:41 | [32m[1mINFO    [0m | email_sender         | Attempting to send email to mrbodhre7@gmail.com for task cddb400f-4ce5-4c47-9bd2-08e7b44d3bac (file: To-do list.xlsx)
+
+2025-11-13 10:18:43 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-13 10:18:43 | [32m[1mINFO    [0m | email_sender         | Email successfully sent to mrbodhre7@gmail.com for task cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:18:43 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-13 10:18:43 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: To-do list.xlsx, task_id: cddb400f-4ce5-4c47-9bd2-08e7b44d3bac, email: mrbodhre7@gmail.com
+
+2025-11-13 10:18:43 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-13 10:18:58 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:18:58 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:00 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:00 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:01 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:01 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:01 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:01 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:02 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:02 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:10 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:10 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:11 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:11 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:11 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:11 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:12 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:12 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:12 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:12 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:13 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:13 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:13 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:13 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:14 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:14 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:14 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:14 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:15 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:15 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:15 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:15 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:16 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:16 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:16 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:16 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:17 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:17 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:17 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:17 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:18 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:18 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:18 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:18 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:18 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:18 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:19 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:19 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:19 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:19 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:19 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:19 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:19 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:19 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:19 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:19 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:19 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:19 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:20 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:20 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:20 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:20 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:20 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:20 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:20 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:20 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:21 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:21 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:21 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:21 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:21 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:21 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:21 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:21 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:22 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:22 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:22 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:22 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:22 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:22 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:22 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:22 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:22 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:22 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:22 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:22 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:23 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:23 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:23 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:23 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:23 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:23 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:23 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:23 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:23 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:23 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:24 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:24 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:24 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:24 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:24 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:24 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:24 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:24 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:24 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:24 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:25 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:25 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:25 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:25 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:25 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:25 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:25 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:25 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:27 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:27 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:19:27 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:19:27 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:20:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac
+
+2025-11-13 10:20:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cddb400f-4ce5-4c47-9bd2-08e7b44d3bac - Status: 200
+
+2025-11-13 10:21:13 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:21:49 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:21:49 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:21:49 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:21:49 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:21:49 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:21:49 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:21:49 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:21:49 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:21:49 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:21:49 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:21:57 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:21:57 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:21:59 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:21:59 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:21:59 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:21:59 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:21:59 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:21:59 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:21:59 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:21:59 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:21:59 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:21:59 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:22:16 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:22:16 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:22:18 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:22:18 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:22:18 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:22:18 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:22:18 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:22:18 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:22:18 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:22:18 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:22:18 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:22:18 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:22:46 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:22:46 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:22:56 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:22:56 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:22:56 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:22:56 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:22:56 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:22:56 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:22:56 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:22:56 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:22:56 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:22:56 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:22:56 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:22:56 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:22:56 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:22:56 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:22:56 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:23:34 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:23:34 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:23:34 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:23:36 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:23:44 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:23:44 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:23:44 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:23:44 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:23:46 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:23:46 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:23:46 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:23:46 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:23:46 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:23:46 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:23:46 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:23:46 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:23:46 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:23:46 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:23:46 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:23:46 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:23:46 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:23:46 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:23:46 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:24:11 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:24:11 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:24:11 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:24:14 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:24:14 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:24:14 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:24:14 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:24:14 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:24:14 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:24:14 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:24:14 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:24:14 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:24:14 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:24:14 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:24:14 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:24:14 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:24:14 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:24:14 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:24:27 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:24:27 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:24:27 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:24:29 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:24:29 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:24:29 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:24:29 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:24:29 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:24:29 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:24:29 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:24:29 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:24:29 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:24:29 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:24:29 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:24:29 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:24:29 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:24:29 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:24:29 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:24:54 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:24:54 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:24:54 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:24:56 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:24:56 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:24:56 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:24:56 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:24:56 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:24:56 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:24:56 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:24:56 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:24:56 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:24:56 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:24:56 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:24:56 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:24:56 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:24:56 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:24:56 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:25:02 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:25:02 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:25:02 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:25:05 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:25:05 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:25:05 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:25:05 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:25:05 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:25:05 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:25:05 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:25:05 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:25:05 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:25:05 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:25:05 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:25:05 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:25:05 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:25:05 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:25:05 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:25:09 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:25:09 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:25:09 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:25:12 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:25:12 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:25:12 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:25:12 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:25:12 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:25:12 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:25:12 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:25:12 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:25:12 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:25:12 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:25:12 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:25:12 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:25:12 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:25:12 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:25:12 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:25:27 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:25:27 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:25:27 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:25:29 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:25:29 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:25:29 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:25:29 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:25:29 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:25:29 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:25:29 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:25:29 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:25:29 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:25:29 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:25:29 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:25:29 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:25:29 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:25:29 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:25:29 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:30:12 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:30:12 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:30:12 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-13 10:30:15 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:30:15 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:30:15 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-13 10:30:15 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:30:15 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:30:15 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-13 10:30:15 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:30:15 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:30:15 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-13 10:30:15 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:30:15 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:30:15 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-13 10:30:15 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:30:15 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 10:30:15 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-13 11:01:42 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-11-13 11:01:42 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-11-13 11:01:42 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-11-13 11:01:42 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-11-13 11:01:42 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-11-13 11:01:42 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-11-13 11:01:42 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-11-13 11:01:42 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-11-13 11:01:42 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-11-13 11:01:42 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-11-13 11:01:42 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-11-13 11:01:42 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-11-13 11:02:11 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-11-13 11:02:11 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-11-13 11:02:11 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-11-13 11:02:11 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-11-13 11:02:11 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-11-13 11:02:11 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-11-13 11:02:11 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-11-13 11:02:11 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-11-13 11:02:11 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-11-13 11:02:11 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-11-13 11:02:11 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-11-13 11:02:11 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-11-13 11:02:45 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-13 11:02:45 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-13 11:02:45 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-13 11:02:45 | [32m[1mINFO    [0m | routes               | Upload request received - filename: To-do list.xlsx, email: bhavana.karimajji@tcs.com
+
+2025-11-13 11:02:45 | [32m[1mINFO    [0m | routes               | Upload request received - filename: To-do list.xlsx, email: bhavana.karimajji@tcs.com
+
+2025-11-13 11:02:45 | [32m[1mINFO    [0m | routes               | Upload request received - filename: To-do list.xlsx, email: bhavana.karimajji@tcs.com
+
+2025-11-13 11:02:45 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/To-do list.xlsx
+
+2025-11-13 11:02:45 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/To-do list.xlsx
+
+2025-11-13 11:02:45 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/To-do list.xlsx
+
+2025-11-13 11:02:45 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/To-do list.xlsx
+
+2025-11-13 11:02:45 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/To-do list.xlsx
+
+2025-11-13 11:02:45 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/To-do list.xlsx
+
+2025-11-13 11:02:45 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: To-do list.xlsx
+
+2025-11-13 11:02:45 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: To-do list.xlsx
+
+2025-11-13 11:02:45 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: To-do list.xlsx
+
+2025-11-13 11:02:46 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8, file: To-do list.xlsx
+
+2025-11-13 11:02:46 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8, file: To-do list.xlsx
+
+2025-11-13 11:02:46 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8, file: To-do list.xlsx
+
+2025-11-13 11:02:46 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: bhavana.karimajji@tcs.com, task_id: cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:02:46 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: bhavana.karimajji@tcs.com, task_id: cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:02:46 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: bhavana.karimajji@tcs.com, task_id: cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:02:46 | [32m[1mINFO    [0m | email_sender         | Attempting to send email to bhavana.karimajji@tcs.com for task cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 (file: To-do list.xlsx)
+
+2025-11-13 11:02:46 | [32m[1mINFO    [0m | email_sender         | Attempting to send email to bhavana.karimajji@tcs.com for task cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 (file: To-do list.xlsx)
+
+2025-11-13 11:02:46 | [32m[1mINFO    [0m | email_sender         | Attempting to send email to bhavana.karimajji@tcs.com for task cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 (file: To-do list.xlsx)
+
+2025-11-13 11:02:47 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-13 11:02:47 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-13 11:02:47 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-13 11:02:47 | [32m[1mINFO    [0m | email_sender         | Email successfully sent to bhavana.karimajji@tcs.com for task cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:02:47 | [32m[1mINFO    [0m | email_sender         | Email successfully sent to bhavana.karimajji@tcs.com for task cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:02:47 | [32m[1mINFO    [0m | email_sender         | Email successfully sent to bhavana.karimajji@tcs.com for task cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:02:47 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: bhavana.karimajji@tcs.com
+
+2025-11-13 11:02:47 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: bhavana.karimajji@tcs.com
+
+2025-11-13 11:02:47 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: bhavana.karimajji@tcs.com
+
+2025-11-13 11:02:47 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: To-do list.xlsx, task_id: cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8, email: bhavana.karimajji@tcs.com
+
+2025-11-13 11:02:47 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: To-do list.xlsx, task_id: cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8, email: bhavana.karimajji@tcs.com
+
+2025-11-13 11:02:47 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: To-do list.xlsx, task_id: cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8, email: bhavana.karimajji@tcs.com
+
+2025-11-13 11:02:47 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-13 11:02:47 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-13 11:02:47 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-13 11:03:07 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:03:07 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:03:07 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:03:07 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:03:07 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:03:07 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:03:10 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:03:10 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:03:10 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:03:10 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:03:10 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:03:10 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:03:11 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:03:11 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:03:11 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:03:11 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:03:11 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:03:11 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:03:28 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:03:28 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:03:28 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:03:28 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:03:28 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:03:28 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:03:29 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:03:29 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:03:29 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:03:29 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:03:29 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:03:29 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:00 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:00 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:00 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:00 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:00 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:00 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:01 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:01 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:01 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:01 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:01 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:01 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:24 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:24 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:24 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:24 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:24 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:24 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:25 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:25 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:25 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:25 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:25 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:25 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:25 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:25 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:25 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:25 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:25 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:25 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Incoming request: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200

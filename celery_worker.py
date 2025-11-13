@@ -4,17 +4,21 @@ import logging
 import os
 import pandas as pd
 import time
+from logger import setup_logging
 
 # Configure Celery
 celery_app = celery.Celery(
     "spreadsheet_processor",
     broker="redis://localhost:6379/0",
-    backend="redis://localhost:6379/0"  # Optional: for result storage
+    backend="redis://localhost:6379/0",  # Optional: for result storage
 )
 
 # Optional: configure logging
 logging.basicConfig(level=logging.INFO)
+
+setup_logging()
 logger = logging.getLogger(__name__)
+
 
 @celery_app.task(bind=True, name="process_spreadsheet_task")
 def process_spreadsheet_task(self, file_path: str, email: str):
@@ -23,28 +27,28 @@ def process_spreadsheet_task(self, file_path: str, email: str):
     """
     try:
         logger.info(f"Processing file: {file_path} for email: {email}")
-        
+
         # 🔧 YOUR ACTUAL PROCESSING LOGIC GOES HERE
         # e.g., read CSV, validate rows, send email, store in DB, etc.
 
         # TODO: Remove this delay
         # this make it slow
-        time.sleep(10)
+        time.sleep(20)
 
         # Example: just log for now
         file_extension = os.path.splitext(file_path)[1].lower()
-        
-        if file_extension == '.csv':
+
+        if file_extension == ".csv":
             df = pd.read_csv(file_path)
-        elif file_extension == '.tsv':
-            df = pd.read_csv(file_path, sep='\t')
-        elif file_extension in ['.xlsx', '.xls']:
+        elif file_extension == ".tsv":
+            df = pd.read_csv(file_path, sep="\t")
+        elif file_extension in [".xlsx", ".xls"]:
             df = pd.read_excel(file_path)
-        elif file_extension == '.ods':
-            df = pd.read_excel(file_path, engine='odf')
+        elif file_extension == ".ods":
+            df = pd.read_excel(file_path, engine="odf")
         else:
             raise ValueError(f"Unsupported file type: {file_extension}")
-        
+
         line_count = len(df)
         logger.info(f"File {file_path} has {line_count} lines.")
 
