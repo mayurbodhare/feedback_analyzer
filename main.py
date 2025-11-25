@@ -3,13 +3,23 @@
 import logging
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from routes import router
 from config import settings
 from logger import setup_logging
+
+from utils.intent import intent_file
+from utils.sentiment import sentiment_file
+from utils.translation import  translate_file
+import models
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+UPLOAD_DIR = str(BASE_DIR / "uploads")
 
 setup_logging()
 logger = logging.getLogger(__name__)
@@ -35,7 +45,7 @@ app = FastAPI(
     title=settings.APP_NAME,
     version="1.0.0",
     description="A minimal FastAPI backend with proper logging",
-    lifespan=lifespan,
+    #lifespan=lifespan,
 )
 
 
@@ -106,3 +116,54 @@ def health_check():
         "status": "healthy",
         "app_name": settings.APP_NAME,
     }
+
+@app.post("/translate/{filename}")
+def translate_file_from_uploads(filename: str):
+    file_path = os.path.join(UPLOAD_DIR,filename) 
+
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail=f"{file_path}: File not found.")
+    try:
+        output_path = translate_file(file_path)
+        return {
+            "status": "success",
+            "original_file": filename,
+            "translated_file": os.path.basename(output_path),
+            "translated_path": output_path,
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/sentiment/{filename}")
+def sentiment_analysis(filename: str):
+    file_path = os.path.join(UPLOAD_DIR,filename)
+
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail=f"{file_path}: File not found. ")
+    try:
+        output_path = sentiment_file(file_path)
+        return {
+            "status": "success",
+            "original_file": filename,
+            "sentiment_file" : os.path.basename(output_path),
+            "translated_path": output_path
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/intent/{filename}")
+def sentiment_analysis(filename: str):
+    file_path = os.path.join(UPLOAD_DIR,filename)
+
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail=f"{file_path}: File not found. ")
+    try:
+        output_path = intent_file(file_path)
+        return {
+            "status": "success",
+            "original_file": filename,
+            "sentiment_file" : os.path.basename(output_path),
+            "translated_path": output_path
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

@@ -6,6 +6,7 @@ import pandas as pd
 import time
 from logger import setup_logging
 
+
 # Configure Celery
 celery_app = celery.Celery(
     "spreadsheet_processor",
@@ -61,3 +62,4 @@ def process_spreadsheet_task(self, file_path: str, email: str):
         logger.error(f"Error processing {file_path}: {str(e)}")
         # Optionally retry or alert
         raise self.retry(exc=e, countdown=60, max_retries=3)
+    

@@ -6,9 +6,9 @@ class Settings(BaseSettings):
     APP_NAME: str = "FastAPI Backend"
     DEBUG: bool = True
     # DATABASE_URL: str
-    BREVO_API_KEY: str
+    #BREVO_API_KEY: str
     ALLOWED_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:8000"]
-    SENDER_EMAIL: str
+    #SENDER_EMAIL: str
 
     model_config = {
         "env_file": ".env",
