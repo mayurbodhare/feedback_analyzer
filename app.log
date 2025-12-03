@@ -1509,3 +1509,1443 @@
 2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
 
 2025-11-13 11:04:26 | [32m[1mINFO    [0m | main                 | Request completed: GET /api/v1/status/cc5e0cf7-8bf3-4ac3-96ba-ffa522454dd8 - Status: 200
+
+2025-11-27 09:58:21 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-11-27 09:58:21 | [32m[1mINFO    [0m | argostranslate.utils | ('Downloading Spacy xx_sent_ud_sm.',)
+
+2025-11-27 09:58:28 | [32m[1mINFO    [0m | argostranslate.utils | ('Spacy xx_sent_ud_sm successfully cached.',)
+
+2025-11-27 09:59:26 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:00:11 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:04:22 | [32m[1mINFO    [0m | main                 | Incoming request: GET /
+
+2025-11-27 10:04:22 | [32m[1mINFO    [0m | main                 | Incoming request: GET /
+
+2025-11-27 10:04:22 | [32m[1mINFO    [0m | main                 | Incoming request: GET /
+
+2025-11-27 10:04:22 | [32m[1mINFO    [0m | main                 | Request completed: GET / - Status: 200
+
+2025-11-27 10:04:22 | [32m[1mINFO    [0m | main                 | Request completed: GET / - Status: 200
+
+2025-11-27 10:04:22 | [32m[1mINFO    [0m | main                 | Request completed: GET / - Status: 200
+
+2025-11-27 10:04:23 | [32m[1mINFO    [0m | main                 | Incoming request: GET /favicon.ico
+
+2025-11-27 10:04:23 | [32m[1mINFO    [0m | main                 | Incoming request: GET /favicon.ico
+
+2025-11-27 10:04:23 | [32m[1mINFO    [0m | main                 | Incoming request: GET /favicon.ico
+
+2025-11-27 10:04:23 | [32m[1mINFO    [0m | main                 | Request completed: GET /favicon.ico - Status: 404
+
+2025-11-27 10:04:23 | [32m[1mINFO    [0m | main                 | Request completed: GET /favicon.ico - Status: 404
+
+2025-11-27 10:04:23 | [32m[1mINFO    [0m | main                 | Request completed: GET /favicon.ico - Status: 404
+
+2025-11-27 10:04:31 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-11-27 10:04:31 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-11-27 10:04:31 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-11-27 10:04:31 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-11-27 10:04:31 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-11-27 10:04:31 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-11-27 10:04:32 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-11-27 10:04:32 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-11-27 10:04:32 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-11-27 10:04:32 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-11-27 10:04:32 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-11-27 10:04:32 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-11-27 10:05:27 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-27 10:05:27 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-27 10:05:27 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | Upload request received - filename: random_multilingual_dataset_fresh.csv, email: mrbodhre7@gmail.com
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | Upload request received - filename: random_multilingual_dataset_fresh.csv, email: mrbodhre7@gmail.com
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | Upload request received - filename: random_multilingual_dataset_fresh.csv, email: mrbodhre7@gmail.com
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 57544e82-50d6-47f2-883f-b9f5c361fc04, file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 57544e82-50d6-47f2-883f-b9f5c361fc04, file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 57544e82-50d6-47f2-883f-b9f5c361fc04, file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: 57544e82-50d6-47f2-883f-b9f5c361fc04
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: 57544e82-50d6-47f2-883f-b9f5c361fc04
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: 57544e82-50d6-47f2-883f-b9f5c361fc04
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | email_sender         | Sending task email to mrbodhre7@gmail.com for task 57544e82-50d6-47f2-883f-b9f5c361fc04
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | email_sender         | Sending task email to mrbodhre7@gmail.com for task 57544e82-50d6-47f2-883f-b9f5c361fc04
+
+2025-11-27 10:05:28 | [32m[1mINFO    [0m | email_sender         | Sending task email to mrbodhre7@gmail.com for task 57544e82-50d6-47f2-883f-b9f5c361fc04
+
+2025-11-27 10:05:30 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-27 10:05:30 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-27 10:05:30 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-27 10:05:30 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mrbodhre7@gmail.com
+
+2025-11-27 10:05:30 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mrbodhre7@gmail.com
+
+2025-11-27 10:05:30 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mrbodhre7@gmail.com
+
+2025-11-27 10:05:30 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-27 10:05:30 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-27 10:05:30 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-27 10:05:30 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: random_multilingual_dataset_fresh.csv, task_id: 57544e82-50d6-47f2-883f-b9f5c361fc04, email: mrbodhre7@gmail.com
+
+2025-11-27 10:05:30 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: random_multilingual_dataset_fresh.csv, task_id: 57544e82-50d6-47f2-883f-b9f5c361fc04, email: mrbodhre7@gmail.com
+
+2025-11-27 10:05:30 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: random_multilingual_dataset_fresh.csv, task_id: 57544e82-50d6-47f2-883f-b9f5c361fc04, email: mrbodhre7@gmail.com
+
+2025-11-27 10:05:30 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-27 10:05:30 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-27 10:05:30 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-27 10:07:42 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:07:42 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:07:42 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:07:56 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:08:07 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-11-27 10:12:06 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:12:06 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:12:06 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:12:17 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-11-27 10:12:18 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:12:18 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:12:18 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:12:18 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:12:18 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:12:18 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:12:18 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:12:18 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:12:18 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:12:18 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:12:18 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:12:18 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:12:18 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:12:18 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:12:18 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:12:29 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | Upload request received - filename: random_multilingual_dataset_fresh.csv, email: mrbodhre7@gmail.com
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | Upload request received - filename: random_multilingual_dataset_fresh.csv, email: mrbodhre7@gmail.com
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | Upload request received - filename: random_multilingual_dataset_fresh.csv, email: mrbodhre7@gmail.com
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: ddad56ce-58b6-47c9-94e6-6e9151462669, file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: ddad56ce-58b6-47c9-94e6-6e9151462669, file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: ddad56ce-58b6-47c9-94e6-6e9151462669, file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: ddad56ce-58b6-47c9-94e6-6e9151462669
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: ddad56ce-58b6-47c9-94e6-6e9151462669
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: ddad56ce-58b6-47c9-94e6-6e9151462669
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | email_sender         | Sending task email to mrbodhre7@gmail.com for task ddad56ce-58b6-47c9-94e6-6e9151462669
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | email_sender         | Sending task email to mrbodhre7@gmail.com for task ddad56ce-58b6-47c9-94e6-6e9151462669
+
+2025-11-27 10:12:52 | [32m[1mINFO    [0m | email_sender         | Sending task email to mrbodhre7@gmail.com for task ddad56ce-58b6-47c9-94e6-6e9151462669
+
+2025-11-27 10:12:55 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-27 10:12:55 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-27 10:12:55 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-27 10:12:55 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mrbodhre7@gmail.com
+
+2025-11-27 10:12:55 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mrbodhre7@gmail.com
+
+2025-11-27 10:12:55 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mrbodhre7@gmail.com
+
+2025-11-27 10:12:55 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-27 10:12:55 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-27 10:12:55 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-27 10:12:55 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: random_multilingual_dataset_fresh.csv, task_id: ddad56ce-58b6-47c9-94e6-6e9151462669, email: mrbodhre7@gmail.com
+
+2025-11-27 10:12:55 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: random_multilingual_dataset_fresh.csv, task_id: ddad56ce-58b6-47c9-94e6-6e9151462669, email: mrbodhre7@gmail.com
+
+2025-11-27 10:12:55 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: random_multilingual_dataset_fresh.csv, task_id: ddad56ce-58b6-47c9-94e6-6e9151462669, email: mrbodhre7@gmail.com
+
+2025-11-27 10:12:55 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-27 10:12:55 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-27 10:12:55 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-27 10:17:50 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:17:50 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:17:50 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:18:10 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-11-27 10:18:10 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:18:10 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:18:10 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:18:10 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:18:10 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:18:10 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:18:10 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:18:10 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:18:10 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:18:11 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:18:11 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:18:11 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:18:11 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:18:11 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:18:11 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:18:46 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:18:46 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:18:46 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:19:06 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:21:54 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | Upload request received - filename: random_multilingual_dataset_fresh.csv, email: mrbodhre7@gmail.com
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | Upload request received - filename: random_multilingual_dataset_fresh.csv, email: mrbodhre7@gmail.com
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | Upload request received - filename: random_multilingual_dataset_fresh.csv, email: mrbodhre7@gmail.com
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 8f0d907f-a9dd-41df-ab00-9925bb437769, file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 8f0d907f-a9dd-41df-ab00-9925bb437769, file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 8f0d907f-a9dd-41df-ab00-9925bb437769, file: random_multilingual_dataset_fresh.csv
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: 8f0d907f-a9dd-41df-ab00-9925bb437769
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: 8f0d907f-a9dd-41df-ab00-9925bb437769
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: 8f0d907f-a9dd-41df-ab00-9925bb437769
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | email_sender         | Sending task email to mrbodhre7@gmail.com for task 8f0d907f-a9dd-41df-ab00-9925bb437769
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | email_sender         | Sending task email to mrbodhre7@gmail.com for task 8f0d907f-a9dd-41df-ab00-9925bb437769
+
+2025-11-27 10:22:03 | [32m[1mINFO    [0m | email_sender         | Sending task email to mrbodhre7@gmail.com for task 8f0d907f-a9dd-41df-ab00-9925bb437769
+
+2025-11-27 10:22:05 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-27 10:22:05 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-27 10:22:05 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-27 10:22:05 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mrbodhre7@gmail.com
+
+2025-11-27 10:22:05 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mrbodhre7@gmail.com
+
+2025-11-27 10:22:05 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mrbodhre7@gmail.com
+
+2025-11-27 10:22:05 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-27 10:22:05 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-27 10:22:05 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-27 10:22:05 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: random_multilingual_dataset_fresh.csv, task_id: 8f0d907f-a9dd-41df-ab00-9925bb437769, email: mrbodhre7@gmail.com
+
+2025-11-27 10:22:05 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: random_multilingual_dataset_fresh.csv, task_id: 8f0d907f-a9dd-41df-ab00-9925bb437769, email: mrbodhre7@gmail.com
+
+2025-11-27 10:22:05 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: random_multilingual_dataset_fresh.csv, task_id: 8f0d907f-a9dd-41df-ab00-9925bb437769, email: mrbodhre7@gmail.com
+
+2025-11-27 10:22:05 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-27 10:22:05 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-27 10:22:05 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-27 10:24:46 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:24:46 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:24:46 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:25:04 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:25:43 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:25:43 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:25:43 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:26:00 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-11-27 10:31:10 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mrbodhre7@gmail.com
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mrbodhre7@gmail.com
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mrbodhre7@gmail.com
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 4a6700a4-f485-4673-9561-2e1b30f2279a, file: test.csv
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 4a6700a4-f485-4673-9561-2e1b30f2279a, file: test.csv
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 4a6700a4-f485-4673-9561-2e1b30f2279a, file: test.csv
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: 4a6700a4-f485-4673-9561-2e1b30f2279a
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: 4a6700a4-f485-4673-9561-2e1b30f2279a
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: 4a6700a4-f485-4673-9561-2e1b30f2279a
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | email_sender         | Sending task email to mrbodhre7@gmail.com for task 4a6700a4-f485-4673-9561-2e1b30f2279a
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | email_sender         | Sending task email to mrbodhre7@gmail.com for task 4a6700a4-f485-4673-9561-2e1b30f2279a
+
+2025-11-27 10:31:28 | [32m[1mINFO    [0m | email_sender         | Sending task email to mrbodhre7@gmail.com for task 4a6700a4-f485-4673-9561-2e1b30f2279a
+
+2025-11-27 10:31:31 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-27 10:31:31 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-27 10:31:31 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-27 10:31:31 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mrbodhre7@gmail.com
+
+2025-11-27 10:31:31 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mrbodhre7@gmail.com
+
+2025-11-27 10:31:31 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mrbodhre7@gmail.com
+
+2025-11-27 10:31:31 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-27 10:31:31 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-27 10:31:31 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-27 10:31:31 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: 4a6700a4-f485-4673-9561-2e1b30f2279a, email: mrbodhre7@gmail.com
+
+2025-11-27 10:31:31 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: 4a6700a4-f485-4673-9561-2e1b30f2279a, email: mrbodhre7@gmail.com
+
+2025-11-27 10:31:31 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: 4a6700a4-f485-4673-9561-2e1b30f2279a, email: mrbodhre7@gmail.com
+
+2025-11-27 10:31:31 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-27 10:31:31 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-27 10:31:31 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-27 11:10:04 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-27 11:10:04 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-27 11:10:04 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mrbodhre7@gmail.com
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mrbodhre7@gmail.com
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mrbodhre7@gmail.com
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: a4fcdee6-462e-4929-a36e-cce4feedd07b, file: test.csv
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: a4fcdee6-462e-4929-a36e-cce4feedd07b, file: test.csv
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: a4fcdee6-462e-4929-a36e-cce4feedd07b, file: test.csv
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: a4fcdee6-462e-4929-a36e-cce4feedd07b
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: a4fcdee6-462e-4929-a36e-cce4feedd07b
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mrbodhre7@gmail.com, task_id: a4fcdee6-462e-4929-a36e-cce4feedd07b
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | email_sender         | Sending task email to mrbodhre7@gmail.com for task a4fcdee6-462e-4929-a36e-cce4feedd07b
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | email_sender         | Sending task email to mrbodhre7@gmail.com for task a4fcdee6-462e-4929-a36e-cce4feedd07b
+
+2025-11-27 11:10:05 | [32m[1mINFO    [0m | email_sender         | Sending task email to mrbodhre7@gmail.com for task a4fcdee6-462e-4929-a36e-cce4feedd07b
+
+2025-11-27 11:10:06 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-27 11:10:06 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-27 11:10:06 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-11-27 11:10:06 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mrbodhre7@gmail.com
+
+2025-11-27 11:10:06 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mrbodhre7@gmail.com
+
+2025-11-27 11:10:06 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mrbodhre7@gmail.com
+
+2025-11-27 11:10:06 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-27 11:10:06 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-27 11:10:06 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mrbodhre7@gmail.com
+
+2025-11-27 11:10:06 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: a4fcdee6-462e-4929-a36e-cce4feedd07b, email: mrbodhre7@gmail.com
+
+2025-11-27 11:10:06 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: a4fcdee6-462e-4929-a36e-cce4feedd07b, email: mrbodhre7@gmail.com
+
+2025-11-27 11:10:06 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: a4fcdee6-462e-4929-a36e-cce4feedd07b, email: mrbodhre7@gmail.com
+
+2025-11-27 11:10:06 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-27 11:10:06 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-11-27 11:10:06 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-12-02 09:33:06 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 09:33:06 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 09:33:06 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 09:34:03 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-12-02 09:34:04 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 09:34:04 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 09:34:04 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 09:34:04 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 09:34:04 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 09:34:04 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 09:34:04 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 09:34:04 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 09:34:04 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 09:34:04 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 09:34:04 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 09:34:04 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 09:34:04 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 09:34:04 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 09:34:04 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 09:42:47 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 09:42:47 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 09:42:47 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 09:43:02 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 09:44:16 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-12-02 09:46:00 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 09:46:00 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 09:46:00 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 09:49:47 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 09:50:10 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-12-02 09:50:50 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-12-02 09:50:50 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-12-02 09:50:50 | [32m[1mINFO    [0m | main                 | Incoming request: GET /docs
+
+2025-12-02 09:50:50 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-12-02 09:50:50 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-12-02 09:50:50 | [32m[1mINFO    [0m | main                 | Request completed: GET /docs - Status: 200
+
+2025-12-02 09:50:50 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-12-02 09:50:50 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-12-02 09:50:50 | [32m[1mINFO    [0m | main                 | Incoming request: GET /openapi.json
+
+2025-12-02 09:50:50 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-12-02 09:50:50 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-12-02 09:50:50 | [32m[1mINFO    [0m | main                 | Request completed: GET /openapi.json - Status: 200
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mayur.bodhare@tcs.com
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mayur.bodhare@tcs.com
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mayur.bodhare@tcs.com
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 5032f3a0-524e-49a3-96ba-e4b0732d7117, file: test.csv
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 5032f3a0-524e-49a3-96ba-e4b0732d7117, file: test.csv
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 5032f3a0-524e-49a3-96ba-e4b0732d7117, file: test.csv
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mayur.bodhare@tcs.com, task_id: 5032f3a0-524e-49a3-96ba-e4b0732d7117
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mayur.bodhare@tcs.com, task_id: 5032f3a0-524e-49a3-96ba-e4b0732d7117
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mayur.bodhare@tcs.com, task_id: 5032f3a0-524e-49a3-96ba-e4b0732d7117
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | email_sender         | Sending task email to mayur.bodhare@tcs.com for task 5032f3a0-524e-49a3-96ba-e4b0732d7117
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | email_sender         | Sending task email to mayur.bodhare@tcs.com for task 5032f3a0-524e-49a3-96ba-e4b0732d7117
+
+2025-12-02 09:52:54 | [32m[1mINFO    [0m | email_sender         | Sending task email to mayur.bodhare@tcs.com for task 5032f3a0-524e-49a3-96ba-e4b0732d7117
+
+2025-12-02 09:52:57 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-12-02 09:52:57 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-12-02 09:52:57 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-12-02 09:52:57 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mayur.bodhare@tcs.com
+
+2025-12-02 09:52:57 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mayur.bodhare@tcs.com
+
+2025-12-02 09:52:57 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mayur.bodhare@tcs.com
+
+2025-12-02 09:52:57 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mayur.bodhare@tcs.com
+
+2025-12-02 09:52:57 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mayur.bodhare@tcs.com
+
+2025-12-02 09:52:57 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mayur.bodhare@tcs.com
+
+2025-12-02 09:52:57 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: 5032f3a0-524e-49a3-96ba-e4b0732d7117, email: mayur.bodhare@tcs.com
+
+2025-12-02 09:52:57 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: 5032f3a0-524e-49a3-96ba-e4b0732d7117, email: mayur.bodhare@tcs.com
+
+2025-12-02 09:52:57 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: 5032f3a0-524e-49a3-96ba-e4b0732d7117, email: mayur.bodhare@tcs.com
+
+2025-12-02 09:52:57 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-12-02 09:52:57 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-12-02 09:52:57 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-12-02 10:24:34 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:24:34 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:24:34 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:24:54 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:25:30 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:25:30 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:25:30 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:25:43 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:25:51 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:25:51 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:25:51 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:26:04 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-12-02 10:26:05 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:26:05 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:26:05 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:26:05 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:26:05 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:26:05 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:26:05 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:26:05 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:26:05 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:26:05 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:26:05 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:26:05 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:26:05 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:26:05 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:26:05 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:26:30 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:26:30 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:26:30 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:26:43 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-12-02 10:26:44 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:26:44 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:26:44 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:26:44 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:26:44 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:26:44 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:26:44 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:26:44 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:26:44 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:26:44 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:26:44 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:26:44 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:26:44 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:26:44 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:26:44 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:26:50 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:26:50 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:26:50 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:27:05 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:27:55 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:27:55 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:27:55 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:28:07 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:28:37 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 9a32f29c-5c0d-4319-bd94-f718dd3878c3, file: test.csv
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 9a32f29c-5c0d-4319-bd94-f718dd3878c3, file: test.csv
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 9a32f29c-5c0d-4319-bd94-f718dd3878c3, file: test.csv
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mayur.bodhare@tcs.com, task_id: 9a32f29c-5c0d-4319-bd94-f718dd3878c3
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mayur.bodhare@tcs.com, task_id: 9a32f29c-5c0d-4319-bd94-f718dd3878c3
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mayur.bodhare@tcs.com, task_id: 9a32f29c-5c0d-4319-bd94-f718dd3878c3
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | email_sender         | Sending task email to mayur.bodhare@tcs.com for task 9a32f29c-5c0d-4319-bd94-f718dd3878c3
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | email_sender         | Sending task email to mayur.bodhare@tcs.com for task 9a32f29c-5c0d-4319-bd94-f718dd3878c3
+
+2025-12-02 10:28:48 | [32m[1mINFO    [0m | email_sender         | Sending task email to mayur.bodhare@tcs.com for task 9a32f29c-5c0d-4319-bd94-f718dd3878c3
+
+2025-12-02 10:28:51 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-12-02 10:28:51 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-12-02 10:28:51 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-12-02 10:28:51 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mayur.bodhare@tcs.com
+
+2025-12-02 10:28:51 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mayur.bodhare@tcs.com
+
+2025-12-02 10:28:51 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mayur.bodhare@tcs.com
+
+2025-12-02 10:28:51 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mayur.bodhare@tcs.com
+
+2025-12-02 10:28:51 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mayur.bodhare@tcs.com
+
+2025-12-02 10:28:51 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mayur.bodhare@tcs.com
+
+2025-12-02 10:28:51 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: 9a32f29c-5c0d-4319-bd94-f718dd3878c3, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:28:51 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: 9a32f29c-5c0d-4319-bd94-f718dd3878c3, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:28:51 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: 9a32f29c-5c0d-4319-bd94-f718dd3878c3, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:28:51 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-12-02 10:28:51 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-12-02 10:28:51 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-12-02 10:53:07 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: ad021231-859b-4e21-b515-fc3a1e1aa865, file: test.csv
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: ad021231-859b-4e21-b515-fc3a1e1aa865, file: test.csv
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: ad021231-859b-4e21-b515-fc3a1e1aa865, file: test.csv
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mayur.bodhare@tcs.com, task_id: ad021231-859b-4e21-b515-fc3a1e1aa865
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mayur.bodhare@tcs.com, task_id: ad021231-859b-4e21-b515-fc3a1e1aa865
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mayur.bodhare@tcs.com, task_id: ad021231-859b-4e21-b515-fc3a1e1aa865
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | email_sender         | Sending task email to mayur.bodhare@tcs.com for task ad021231-859b-4e21-b515-fc3a1e1aa865
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | email_sender         | Sending task email to mayur.bodhare@tcs.com for task ad021231-859b-4e21-b515-fc3a1e1aa865
+
+2025-12-02 10:53:23 | [32m[1mINFO    [0m | email_sender         | Sending task email to mayur.bodhare@tcs.com for task ad021231-859b-4e21-b515-fc3a1e1aa865
+
+2025-12-02 10:53:25 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-12-02 10:53:25 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-12-02 10:53:25 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-12-02 10:53:25 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mayur.bodhare@tcs.com
+
+2025-12-02 10:53:25 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mayur.bodhare@tcs.com
+
+2025-12-02 10:53:25 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mayur.bodhare@tcs.com
+
+2025-12-02 10:53:25 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mayur.bodhare@tcs.com
+
+2025-12-02 10:53:25 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mayur.bodhare@tcs.com
+
+2025-12-02 10:53:25 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mayur.bodhare@tcs.com
+
+2025-12-02 10:53:25 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: ad021231-859b-4e21-b515-fc3a1e1aa865, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:53:25 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: ad021231-859b-4e21-b515-fc3a1e1aa865, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:53:25 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: ad021231-859b-4e21-b515-fc3a1e1aa865, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:53:25 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-12-02 10:53:25 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-12-02 10:53:25 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-12-02 10:57:39 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:57:39 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:57:39 | [32m[1mINFO    [0m | main                 | Shutting down application
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | main                 | API routes registered at /api/v1
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | main                 | Starting Background Jobs Feedback Analyzer FastAPI Backend
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | main                 | Environment: development
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | main                 | Allowed origins: ['*']
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:57:52 | [32m[1mINFO    [0m | main                 | Application started
+
+2025-12-02 10:57:57 | [32m[1mINFO    [0m | argostranslate.utils | ('Looking for cached Spacy xx_sent_ud_sm.',)
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | main                 | Incoming request: POST /api/v1/upload
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | Upload request received - filename: test.csv, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | Saving file to: uploads/test.csv
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | File saved successfully: uploads/test.csv
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | Enqueueing processing task for file: test.csv
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 75981ae2-2d15-42c3-93df-e74b0abfc027, file: test.csv
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 75981ae2-2d15-42c3-93df-e74b0abfc027, file: test.csv
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | Task enqueued successfully - task_id: 75981ae2-2d15-42c3-93df-e74b0abfc027, file: test.csv
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mayur.bodhare@tcs.com, task_id: 75981ae2-2d15-42c3-93df-e74b0abfc027
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mayur.bodhare@tcs.com, task_id: 75981ae2-2d15-42c3-93df-e74b0abfc027
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | routes               | Sending confirmation email to: mayur.bodhare@tcs.com, task_id: 75981ae2-2d15-42c3-93df-e74b0abfc027
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | email_sender         | Sending task email to mayur.bodhare@tcs.com for task 75981ae2-2d15-42c3-93df-e74b0abfc027
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | email_sender         | Sending task email to mayur.bodhare@tcs.com for task 75981ae2-2d15-42c3-93df-e74b0abfc027
+
+2025-12-02 10:58:11 | [32m[1mINFO    [0m | email_sender         | Sending task email to mayur.bodhare@tcs.com for task 75981ae2-2d15-42c3-93df-e74b0abfc027
+
+2025-12-02 10:58:13 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-12-02 10:58:13 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-12-02 10:58:13 | [32m[1mINFO    [0m | httpx                | HTTP Request: POST https://api.brevo.com/v3/smtp/email "HTTP/1.1 201 Created"
+
+2025-12-02 10:58:13 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mayur.bodhare@tcs.com
+
+2025-12-02 10:58:13 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mayur.bodhare@tcs.com
+
+2025-12-02 10:58:13 | [32m[1mINFO    [0m | email_sender         | Email with attachment sent successfully to mayur.bodhare@tcs.com
+
+2025-12-02 10:58:13 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mayur.bodhare@tcs.com
+
+2025-12-02 10:58:13 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mayur.bodhare@tcs.com
+
+2025-12-02 10:58:13 | [32m[1mINFO    [0m | routes               | Confirmation email sent successfully to: mayur.bodhare@tcs.com
+
+2025-12-02 10:58:13 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: 75981ae2-2d15-42c3-93df-e74b0abfc027, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:58:13 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: 75981ae2-2d15-42c3-93df-e74b0abfc027, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:58:13 | [32m[1mINFO    [0m | routes               | Upload process completed successfully - filename: test.csv, task_id: 75981ae2-2d15-42c3-93df-e74b0abfc027, email: mayur.bodhare@tcs.com
+
+2025-12-02 10:58:13 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-12-02 10:58:13 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200
+
+2025-12-02 10:58:13 | [32m[1mINFO    [0m | main                 | Request completed: POST /api/v1/upload - Status: 200

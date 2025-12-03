@@ -3,7 +3,7 @@ from fastapi import APIRouter, UploadFile, HTTPException, File, Form
 from pydantic import EmailStr
 import os
 import logging
-from celery_worker import process_spreadsheet_task
+from worker.celery_worker import process_spreadsheet_task
 from email_sender import send_task_email
 
 # Configure logger
