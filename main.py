@@ -13,10 +13,13 @@ from logger import setup_logging
 
 from utils.intent import intent_file
 from utils.sentiment import sentiment_file
+from utils.sunburst import build_sunburst_figure
 from utils.translation import  translate_file
 import models
 import os
 from pathlib import Path
+
+from utils.treemap import build_treemap_figure
 
 BASE_DIR = Path(__file__).resolve().parent
 UPLOAD_DIR = str(BASE_DIR / "uploads")
@@ -163,6 +166,41 @@ def sentiment_analysis(filename: str):
             "status": "success",
             "original_file": filename,
             "sentiment_file" : os.path.basename(output_path),
+            "translated_path": output_path
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    
+@app.post("/sunburst/{filename}")
+def intent_sunburst(filename: str):
+    file_path = os.path.join(UPLOAD_DIR,filename)
+
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail=f"{file_path}: File not found. ")
+    try:
+        output_path = build_sunburst_figure(file_path)
+        return {
+            "status": "success",
+            "original_file": filename,
+            "sunburst_file" : os.path.basename(output_path),
+            "translated_path": output_path
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    
+
+@app.post("/treemap/{filename}")
+def sentiment_treemap(filename: str):
+    file_path = os.path.join(UPLOAD_DIR,filename)
+
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail=f"{file_path}: File not found. ")
+    try:
+        output_path = build_treemap_figure(file_path)
+        return {
+            "status": "success",
+            "original_file": filename,
+            "sunburst_file" : os.path.basename(output_path),
             "translated_path": output_path
         }
     except Exception as e:

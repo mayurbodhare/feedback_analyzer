@@ -28,6 +28,7 @@ dependencies = [
     "numpy (==1.26.4)",
     "langid (==1.1.6)",
     "transformers (==4.51.3)",
+    "plotly (==6.2.0)",
 ]
 
 

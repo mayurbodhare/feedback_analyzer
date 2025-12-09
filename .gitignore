@@ -12,3 +12,4 @@ build/
 *.egg-info/
 models_dir/
 .env
+uploads/
