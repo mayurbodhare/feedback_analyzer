@@ -7,9 +7,14 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from routes import router
+from routes.routes import router
+from routes.db_test import router as db_test_router
+
 from config import settings
 from logger import setup_logging
+
+
+from db import init_db, close_db
 
 setup_logging()
 logger = logging.getLogger(__name__)
@@ -24,7 +29,15 @@ async def lifespan(app: FastAPI):
     logger.info(f"Allowed origins: {getattr(settings, 'ALLOWED_ORIGINS', [])}")
     logger.info("Application started")
 
+    logger.info("Initializing database")
+    await init_db()
+    logger.info("Database initialized")
+
     yield
+
+    logger.info("Closing database")
+    await close_db()
+    logger.info("Database closed")
 
     # Shutdown
     logger.info("Shutting down application")
@@ -89,6 +102,8 @@ async def global_exception_handler(request: Request, exc: Exception):
 app.include_router(router, prefix="/api/v1")
 logger.info("API routes registered at /api/v1")
 
+app.include_router(db_test_router, prefix="/api/v1/db-test")
+logger.info("API routes registered at /api/v1/db-test")
 
 @app.get("/")
 def root():

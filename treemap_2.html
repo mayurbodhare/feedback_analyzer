@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plotly Treemap from JSON</title>
+
+    <!-- Load Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+
+        #treemap {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Interactive Treemap Rendered from JSON</h2>
+
+<div id="treemap"></div>
+
+<script>
+    // ---- OPTION 1: Load JSON from local file ----
+    fetch("treemap.json")
+        .then(response => response.json())
+        .then(plotlyJSON => {
+            // plotlyJSON contains {"data": [...], "layout": {...}}
+
+            Plotly.newPlot(
+                "treemap",
+                plotlyJSON.data,
+                plotlyJSON.layout
+            );
+        });
+
+    // ---- OPTION 2 (API example):
+    // fetch("/api/get_treemap_json") ---- your backend endpoint
+</script>
+
+</body>
+</html>
