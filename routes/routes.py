@@ -1,10 +1,18 @@
 from pathlib import Path
-from fastapi import APIRouter, UploadFile, HTTPException, File, Form
+from fastapi import APIRouter, UploadFile, HTTPException, File, Form, Depends
 from pydantic import EmailStr
 import os
 import logging
 from worker.celery_worker import process_spreadsheet_task
 from email_sender import send_task_email
+
+from fastapi.responses import JSONResponse
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select
+
+from db import get_db
+from db import Task, TaskStatus, TaskStage
+
 
 # Configure logger
 logger = logging.getLogger(__name__)
@@ -33,7 +41,7 @@ MIME_TO_EXTS = {
 
 
 @router.post("/upload")
-async def upload_spreadsheet(file: UploadFile = File(...), email: EmailStr = Form(...)):
+async def upload_spreadsheet(file: UploadFile = File(...), email: EmailStr = Form(...), db: AsyncSession = Depends(get_db)):
     """
     Upload a spreadsheet file (.csv, .tsv, .xls, .xlsx, .ods) and provide a valid email.
     """
@@ -111,8 +119,28 @@ async def upload_spreadsheet(file: UploadFile = File(...), email: EmailStr = For
         raise HTTPException(
             status_code=500, detail="Failed to enqueue processing task."
         )
+    
+    # 6. Create task record in database
+    logger.info(f"Creating database record for task_id: {task.id}")
+    try:
+        db_task = Task(
+            job_id=task.id,
+            email=email,
+            status=TaskStatus.PENDING,
+            stage=TaskStage.QUEUE
+        )
+        db.add(db_task)
+        await db.commit()
+        await db.refresh(db_task)
+        logger.info(f"Database record created successfully for task_id: {task.id}")
+    except Exception as e:
+        await db.rollback()
+        logger.error(f"Failed to create database record for task {task.id}: {str(e)}")
+        # Don't fail the request - task is already queued
+        logger.warning("Continuing despite database error - task is already queued")
 
-    # 6. Send Email to the User
+
+    # 7. Send Email to the User
     logger.info(f"Sending confirmation email to: {email}, task_id: {task.id}")
     try:
         await send_task_email(email_to=email, file_name=file.filename, task_id=task.id)
@@ -142,10 +170,147 @@ async def upload_spreadsheet(file: UploadFile = File(...), email: EmailStr = For
 
 
 @router.get("/status/{task_id}")
-async def get_task_status(task_id: str):
-    """Get the status of a processing task."""
-    task = process_spreadsheet_task.AsyncResult(task_id)
-    return {
-        "task_id": task_id,
-        "status": task.status,
-    }
+async def get_task_status(task_id: str, db: AsyncSession = Depends(get_db)):
+    """Get the status of a processing task from both Celery and database."""
+    logger.info(f"Status check requested for task_id: {task_id}")
+
+    # Get Celery task status
+    celery_task = process_spreadsheet_task.AsyncResult(task_id)
+    celery_status = celery_task.status
+
+    # Get database task status
+    try:
+        result = await db.execute(select(Task).where(Task.job_id == task_id))
+        db_task = result.scalar_one_or_none()
+
+        if db_task:
+            logger.info(
+                f"Task found in database: {task_id}, status: {db_task.status.value}, stage: {db_task.stage.value}"
+            )
+            return {
+                "task_id": task_id,
+                "celery_status": celery_status,
+                "status": db_task.status.value,
+                "stage": db_task.stage.value,
+                "email": db_task.email,
+                "created_at": (
+                    db_task.created_at.isoformat() if db_task.created_at else None
+                ),
+                "updated_at": (
+                    db_task.updated_at.isoformat() if db_task.updated_at else None
+                ),
+                "results": (
+                    {
+                        "distribution_chart": db_task.distribution_chart,
+                        "wordcloud": db_task.wordcloud,
+                        "treemap": db_task.treemap,
+                        "sunburst": db_task.sunburst,
+                        "summary": db_task.summary,
+                    }
+                    if db_task.status == TaskStatus.COMPLETED
+                    else None
+                ),
+                "error_message": (
+                    db_task.error_message
+                    if hasattr(db_task, "error_message")
+                    and db_task.status == TaskStatus.FAILED
+                    else None
+                ),
+            }
+        else:
+            logger.warning(f"Task not found in database: {task_id}")
+            return {
+                "task_id": task_id,
+                "celery_status": celery_status,
+                "status": "not_found",
+                "message": "Task not found in database. It may not have been created yet.",
+            }
+    except Exception as e:
+        logger.error(f"Error retrieving task status from database: {str(e)}")
+        # Return Celery status even if database query fails
+        return {
+            "task_id": task_id,
+            "celery_status": celery_status,
+            "status": "database_error",
+            "message": "Could not retrieve task from database.",
+        }
+
+
+@router.get("/tasks/user/{email}")
+async def get_user_tasks(email: EmailStr, db: AsyncSession = Depends(get_db)):
+    """Get all tasks for a specific user email."""
+    logger.info(f"Retrieving all tasks for email: {email}")
+
+    try:
+        result = await db.execute(
+            select(Task).where(Task.email == email).order_by(Task.created_at.desc())
+        )
+        tasks = result.scalars().all()
+
+        logger.info(f"Found {len(tasks)} tasks for email: {email}")
+        return {
+            "email": email,
+            "count": len(tasks),
+            "tasks": [
+                {
+                    "task_id": task.job_id,
+                    "status": task.status.value,
+                    "stage": task.stage.value,
+                    "created_at": (
+                        task.created_at.isoformat() if task.created_at else None
+                    ),
+                    "updated_at": (
+                        task.updated_at.isoformat() if task.updated_at else None
+                    ),
+                    "has_results": task.status == TaskStatus.COMPLETED,
+                }
+                for task in tasks
+            ],
+        }
+    except Exception as e:
+        logger.error(f"Error retrieving tasks for email {email}: {str(e)}")
+        raise HTTPException(
+            status_code=500, detail="Failed to retrieve tasks from database."
+        )
+
+
+@router.get("/results/{task_id}")
+async def get_task_results(task_id: str, db: AsyncSession = Depends(get_db)):
+    """Get detailed results for a completed task."""
+    logger.info(f"Results requested for task_id: {task_id}")
+
+    try:
+        result = await db.execute(select(Task).where(Task.job_id == task_id))
+        task = result.scalar_one_or_none()
+
+        if not task:
+            logger.warning(f"Task not found: {task_id}")
+            raise HTTPException(status_code=404, detail="Task not found")
+
+        if task.status != TaskStatus.COMPLETED:
+            logger.warning(
+                f"Task not completed yet: {task_id}, current status: {task.status.value}"
+            )
+            raise HTTPException(
+                status_code=400,
+                detail=f"Task is not completed yet. Current status: {task.status.value}",
+            )
+
+        logger.info(f"Returning results for task_id: {task_id}")
+        return {
+            "task_id": task.job_id,
+            "email": task.email,
+            "status": task.status.value,
+            "distribution_chart": task.distribution_chart,
+            "wordcloud": task.wordcloud,
+            "treemap": task.treemap,
+            "sunburst": task.sunburst,
+            "summary": task.summary,
+            "created_at": task.created_at.isoformat() if task.created_at else None,
+            "completed_at": task.updated_at.isoformat() if task.updated_at else None,
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error retrieving results for task {task_id}: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to retrieve task results.")

@@ -4,7 +4,7 @@ import logging
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
-from fastapi.middleware.cors import CORSMiddleware
+# from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from routes.routes import router
@@ -102,8 +102,8 @@ async def global_exception_handler(request: Request, exc: Exception):
 app.include_router(router, prefix="/api/v1")
 logger.info("API routes registered at /api/v1")
 
-app.include_router(db_test_router, prefix="/api/v1/db-test")
-logger.info("API routes registered at /api/v1/db-test")
+# app.include_router(db_test_router, prefix="/api/v1/db-test")
+# logger.info("API routes registered at /api/v1/db-test")
 
 @app.get("/")
 def root():
