@@ -210,3 +210,63 @@ Follow the best practices for code readability and scalability.
 ## Contact
 
 For issues and questions, please open an issue on the [GitHub repository](https://github.com/mayurbodhare/feedback_analyzer/issues).
+
+
+```json
+{
+    'lang': 'py',
+    'task': 'process_spreadsheet_task',
+    'id': 'd4807fbc-bdd4-43c0-a949-be44d13a1551',
+    'shadow': None,
+    'eta': None,
+    'expires': None,
+    'group': None,
+    'group_index': None,
+    'retries': 0,
+    'timelimit': [None, None],
+    'root_id': 'd4807fbc-bdd4-43c0-a949-be44d13a1551',
+    'parent_id': None,
+    'argsrepr': "('uploads/test.csv', 'user@example.com')",
+    'kwargsrepr': '{}',
+    'origin': 'gen15668@AVDAILAB56-99',
+    'ignore_result': False,
+    'replaced_task_nesting': 0,
+    'stamped_headers': None,
+    'stamps': {},
+    'redelivered': True,
+    'properties': {
+        'correlation_id': 'd4807fbc-bdd4-43c0-a949-be44d13a1551',
+        'reply_to': 'dbe6166e-110d-329f-add8-31efab6c8dfd',
+        'delivery_mode': 2,
+        'delivery_info': {
+            'exchange': '',
+            'routing_key': 'celery',
+            'redelivered': True
+        },
+        'priority': 0,
+        'body_encoding': 'base64',
+        'delivery_tag': 'bcfa93c4-58d8-42a8-ae99-0fb8ce828dd2'
+    },
+    'reply_to': 'dbe6166e-110d-329f-add8-31efab6c8dfd',
+    'correlation_id': 'd4807fbc-bdd4-43c0-a949-be44d13a1551',
+    'hostname': 'celery@AVDAILAB56-99',
+    'delivery_info': {
+        'exchange': '',
+        'routing_key': 'celery',
+        'priority': 0,
+        'redelivered': True
+    },
+    'args': ['uploads/test.csv', 'user@example.com'],
+    'kwargs': {},
+    'is_eager': False,
+    'callbacks': None,
+    'errbacks': None,
+    'chain': None,
+    'chord': None,
+    'called_directly': False,
+    'headers': {
+        'redelivered': True
+    },
+    '_protected': 1
+}
+```

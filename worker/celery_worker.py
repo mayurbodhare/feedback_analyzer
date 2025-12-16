@@ -28,6 +28,9 @@ logger = logging.getLogger(__name__)
 
 @celery_app.task(bind=True, name="process_spreadsheet_task")
 def process_spreadsheet_task(self, file_path: str, email: str):  # <-- def, not async def
+
+    task_id = self.request.id
+
     try:
         logger.info(f"Processing file: {file_path} for email: {email}")
 
@@ -45,7 +48,7 @@ def process_spreadsheet_task(self, file_path: str, email: str):  # <-- def, not 
             asyncio.run(process_sentiment(df, file_path, email))
         else:
             logger.info("No known processing column found. Starting translation.")
-            asyncio.run(process_translate(df, file_path, email))
+            asyncio.run(process_translate(df, file_path, email, task_id))
 
         logger.info(f"Finished processing file: {file_path}")
         return {"status": "success", "email": email}

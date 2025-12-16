@@ -6,6 +6,9 @@ from utils.intent import process_intent
 from utils.file_utils import read_file, save_file
 import pandas as pd
 
+from utils.change_task_status import update_task_stage
+from db import TaskStage
+
 logger = logging.getLogger(__name__)
 
 
@@ -102,8 +105,16 @@ def sentiment_file(df: pd.DataFrame, file_path: str):
     return output_path, df
 
 
-async def process_sentiment(df: pd.DataFrame, file_path: str, email: str):
+async def process_sentiment(df: pd.DataFrame, file_path: str, email: str, task_id: str = None):
     logger.info(f"Processing sentiment for file: {file_path}, email: {email}")
+
+    if task_id:
+        await update_task_stage(task_id, TaskStage.SENTIMENT_STAGE_START)
+
     output_path, new_df = sentiment_file(df, file_path)
-    await process_intent(new_df, file_path, email)
+
+    if task_id:
+        await update_task_stage(task_id, TaskStage.SENTIMENT_STAGE_COMPLETE)
+
+    await process_intent(new_df, file_path, email, task_id)
     logger.info(f"Sentiment processing completed for: {file_path}")

@@ -6,6 +6,8 @@ import pandas as pd
 from email_sender import send_confirmation_email
 import logging
 
+from utils.change_task_status import update_task_stage
+from db import TaskStage
 
 logger = logging.getLogger(__name__)
 
@@ -90,8 +92,16 @@ def intent_file(df: pd.DataFrame, file_path: str):
     return output_path, merged
 
 
-async def process_intent(df: pd.DataFrame, file_path: str, email: str):
+async def process_intent(df: pd.DataFrame, file_path: str, email: str, task_id: str = None):
     logger.info(f"Processing intent for file: {file_path}, email: {email}")
+    if task_id:
+        await update_task_stage(task_id, TaskStage.INTENT_STAGE_START)
+
     output_path, new_df = intent_file(df, file_path)
+
+    if task_id:
+        await update_task_stage(task_id, TaskStage.INTENT_STAGE_COMPLETE)
+
     await send_confirmation_email(output_path, email)
+
     logger.info(f"Intent processing completed for: {file_path}")

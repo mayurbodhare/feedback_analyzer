@@ -16,8 +16,12 @@ from logger import setup_logging
 
 from db import init_db, close_db
 
+from fastapi.staticfiles import StaticFiles
+
 setup_logging()
 logger = logging.getLogger(__name__)
+
+
 
 
 @asynccontextmanager
@@ -50,6 +54,9 @@ app = FastAPI(
     description="A minimal FastAPI backend with proper logging",
     lifespan=lifespan,
 )
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 
 # Middleware for request logging

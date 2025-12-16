@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload - Feedback Analyzer</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="upload-card">
+            <h1>📊 Feedback Analyzer</h1>
+            <p class="subtitle">Upload your spreadsheet for analysis</p>
+            
+            <form id="uploadForm" enctype="multipart/form-data">
+                <!-- Email Input -->
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="your.email@example.com"
+                        required
+                    >
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <!-- File Input -->
+                <div class="form-group">
+                    <label for="file">Spreadsheet File *</label>
+                    <div class="file-input-wrapper">
+                        <input 
+                            type="file" 
+                            id="file" 
+                            name="file"
+                            accept=".csv,.xls,.xlsx,.ods,.tsv"
+                            required
+                        >
+                        <label for="file" class="file-label">
+                            <span id="fileName">Choose a file...</span>
+                            <span class="file-button">Browse</span>
+                        </label>
+                    </div>
+                    <small class="file-info">
+                        Allowed formats: CSV, XLS, XLSX, ODS, TSV
+                    </small>
+                    <span class="error-message" id="fileError"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span id="btnText">Upload & Process</span>
+                    <span id="btnLoader" class="loader" style="display: none;"></span>
+                </button>
+            </form>
+
+            <!-- Progress/Result Display -->
+            <div id="resultContainer" style="display: none;">
+                <div class="result-card">
+                    <div class="result-icon" id="resultIcon"></div>
+                    <h3 id="resultTitle"></h3>
+                    <p id="resultMessage"></p>
+                    <div id="taskInfo" style="display: none;">
+                        <p><strong>Task ID:</strong> <code id="taskId"></code></p>
+                        <p><strong>Email:</strong> <span id="taskEmail"></span></p>
+                    </div>
+                    <button class="secondary-btn" onclick="resetForm()">Upload Another File</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/upload.js"></script>
+</body>
+</html>

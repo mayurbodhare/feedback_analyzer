@@ -1,10 +1,12 @@
 from pathlib import Path
-from fastapi import APIRouter, UploadFile, HTTPException, File, Form, Depends
+from fastapi import APIRouter, UploadFile, HTTPException, File, Form, Depends, Request
 from pydantic import EmailStr
 import os
 import logging
 from worker.celery_worker import process_spreadsheet_task
 from email_sender import send_task_email
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 
 from fastapi.responses import JSONResponse
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -18,6 +20,10 @@ from db import Task, TaskStatus, TaskStage
 logger = logging.getLogger(__name__)
 
 router = APIRouter()
+
+
+# Setup Jinja2 templates
+templates = Jinja2Templates(directory="templates")
 
 # Allowed MIME types and extensions
 ALLOWED_MIME_TYPES = {
@@ -38,6 +44,16 @@ MIME_TO_EXTS = {
     "application/vnd.oasis.opendocument.spreadsheet": {".ods"},
     "text/tab-separated-values": {".tsv"},
 }
+
+@router.get("/upload", response_class=HTMLResponse)
+async def upload_page(request: Request):
+    """
+    Serve the file upload page
+    """
+    return templates.TemplateResponse(
+        "upload.html",
+        {"request": request}
+    )
 
 
 @router.post("/upload")

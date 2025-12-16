@@ -6,6 +6,8 @@ import pandas as pd
 import logging
 from utils.file_utils import read_file, save_file
 from utils.sentiment import process_sentiment
+from utils.change_task_status import update_task_stage
+from db import TaskStage
 
 logger = logging.getLogger(__name__)
 
@@ -53,8 +55,10 @@ def detect_language(text: str):
         return "en"
 
 
-def translate_file(df: pd.DataFrame, file_path: str):
+async def translate_file(df: pd.DataFrame, file_path: str):
     logger.info(f"Starting translation for file: {file_path}")
+
+    
 
     funcs = load_translation_models()
 
@@ -95,8 +99,16 @@ def translate_file(df: pd.DataFrame, file_path: str):
     return output_path, df
 
 
-async def process_translate(df: pd.DataFrame, file_path: str, email: str):
+async def process_translate(df: pd.DataFrame, file_path: str, email: str, task_id: str = None):
     logger.info(f"Processing translation for file: {file_path}, email: {email}")
-    output_path, new_df = translate_file(df, file_path)
-    await process_sentiment(new_df, file_path, email)
+
+    if task_id:
+        await update_task_stage(task_id, TaskStage.TRANSLATION_STAGE_START)
+
+    output_path, new_df = await translate_file(df, file_path)
+
+    if task_id:
+        await update_task_stage(task_id, TaskStage.TRANSLATION_STAGE_COMPLETE)
+
+    await process_sentiment(new_df, file_path, email, task_id)  # TODO: Continue from here
     logger.info(f"Translation processing completed for: {file_path}")
