@@ -46,6 +46,8 @@ class Task(Base):
     # Primary identification
     id = Column(Integer, primary_key=True, index=True)
     job_id = Column(String(100), unique=True, nullable=False, index=True)
+    file_id = Column(String(100), unique=True, nullable=False, index=True)
+    file_path = Column(String(100), nullable=False, index=True)
     email = Column(String(100), nullable=False, index=True)
 
     # Status tracking

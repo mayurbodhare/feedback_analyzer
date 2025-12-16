@@ -1,6 +1,7 @@
 from pathlib import Path
 from fastapi import APIRouter, UploadFile, HTTPException, File, Form, Depends, Request
 from pydantic import EmailStr
+import uuid
 import os
 import logging
 from worker.celery_worker import process_spreadsheet_task
@@ -14,7 +15,8 @@ from sqlalchemy import select
 
 from db import get_db
 from db import Task, TaskStatus, TaskStage
-
+from utils.column_validator import validate_columns, rename_columns_to_standard
+from utils.file_utils import read_file
 
 # Configure logger
 logger = logging.getLogger(__name__)
@@ -113,20 +115,109 @@ async def upload_spreadsheet(file: UploadFile = File(...), email: EmailStr = For
 
     # 4. Save the file
     os.makedirs("uploads", exist_ok=True)
-    file_path = f"uploads/{file.filename}"
-    logger.info(f"Saving file to: {file_path}")
+    temp_file_path = f"uploads/{file.filename}"
+    logger.info(f"Saving file to: {temp_file_path}")
     try:
-        with open(file_path, "wb") as f:
+        with open(temp_file_path, "wb") as f:
             f.write(await file.read())
-        logger.info(f"File saved successfully: {file_path}")
+        logger.info(f"File saved successfully: {temp_file_path}")
     except Exception as e:
         logger.error(f"Failed to save file {file.filename}: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to save uploaded file.")
+    
+     # 5. Validate columns in the file
+    logger.info(f"Validating columns in file: {file.filename}")
+    try:
+        df = read_file(temp_file_path)
+        logger.debug(f"File read successfully, shape: {df.shape}")
+        logger.debug(f"Original columns: {list(df.columns)}")
+        
+        # Validate columns with fuzzy matching (threshold: 0.8)
+        is_valid, validation_result = validate_columns(df, threshold=0.8)
+        
+        if not is_valid:
+            logger.warning(f"Column validation failed for file: {file.filename}")
+            logger.warning(f"Missing columns: {validation_result['missing_columns']}")
+            logger.warning(f"Found columns: {validation_result['found_columns']}")
+            
+            # Clean up temp file
+            if os.path.exists(temp_file_path):
+                os.remove(temp_file_path)
+            
+            # Build detailed error message
+            error_message = "Required columns are missing or incorrectly named.\n\n"
+            error_message += f"Missing columns: {', '.join(validation_result['missing_columns'])}\n\n"
+            
+            if validation_result['suggestions']:
+                error_message += "Suggestions:\n"
+                for missing_col, suggestion in validation_result['suggestions'].items():
+                    error_message += f"  - '{missing_col}' might be '{suggestion['suggested_column']}' (similarity: {suggestion['similarity']}%)\n"
+            
+            error_message += "\nRequired columns (case-insensitive, spaces normalized):\n"
+            error_message += "  - depute geography\n"
+            error_message += "  - depute country\n"
+            error_message += "  - depute branch\n"
+            error_message += "  - depute datacenter\n"
+            error_message += "  - question\n"
+            error_message += "  - answer\n"
+            
+            raise HTTPException(status_code=400, detail=error_message)
+        
+        logger.info(f"Column validation passed for file: {file.filename}")
+        logger.info(f"Column mapping: {validation_result['found_columns']}")
+        
+        # Rename columns to standard names
+        df_renamed, success, _ = rename_columns_to_standard(df, threshold=0.8)
+        
+        if not success:
+            logger.error(f"Failed to rename columns for file: {file.filename}")
+            if os.path.exists(temp_file_path):
+                os.remove(temp_file_path)
+            raise HTTPException(status_code=500, detail="Failed to process file columns.")
+        
+        # Save the file with renamed columns
+        
+        random_filename = f"{uuid.uuid4().hex}"
+        random_filename_with_extension = f"{random_filename}{ext}" 
+        final_file_path = f"uploads/{random_filename_with_extension}"
+        logger.info(f"Saving file with renamed columns to: {final_file_path}")
 
-    # 5. Enqueue processing task
+        # Determine file format and save appropriately
+        if ext == '.csv':
+            df_renamed.to_csv(final_file_path, index=False)
+        elif ext in ['.xlsx', '.xls']:
+            df_renamed.to_excel(final_file_path, index=False, engine='openpyxl' if ext == '.xlsx' else 'xlwt')
+        elif ext == '.ods':
+            df_renamed.to_excel(final_file_path, index=False, engine='odf')
+        else:
+            # Fallback to CSV
+            df_renamed.to_csv(final_file_path, index=False)
+        
+        logger.info(f"File saved with standardized columns: {final_file_path}")
+        
+        # Remove temp file
+        if os.path.exists(temp_file_path):
+            os.remove(temp_file_path)
+            logger.debug(f"Removed temporary file: {temp_file_path}")
+        
+    except HTTPException:
+        # Re-raise HTTP exceptions
+        raise
+    except Exception as e:
+        logger.error(f"Error validating/processing file {file.filename}: {str(e)}", exc_info=True)
+        # Clean up temp file
+        if os.path.exists(temp_file_path):
+            os.remove(temp_file_path)
+        raise HTTPException(
+            status_code=400,
+            detail=f"Failed to validate file structure: {str(e)}"
+        )
+
+
+    # 6. Enqueue processing task
     logger.info(f"Enqueueing processing task for file: {file.filename}")
     try:
-        task = process_spreadsheet_task.delay(file_path, email)
+        task = process_spreadsheet_task.delay(final_file_path, email)
         logger.info(
             f"Task enqueued successfully - task_id: {task.id}, file: {file.filename}"
         )
@@ -136,11 +227,13 @@ async def upload_spreadsheet(file: UploadFile = File(...), email: EmailStr = For
             status_code=500, detail="Failed to enqueue processing task."
         )
     
-    # 6. Create task record in database
+    # 7. Create task record in database
     logger.info(f"Creating database record for task_id: {task.id}")
     try:
         db_task = Task(
             job_id=task.id,
+            file_id=random_filename,
+            file_path=final_file_path,
             email=email,
             status=TaskStatus.PENDING,
             stage=TaskStage.QUEUE
@@ -156,7 +249,7 @@ async def upload_spreadsheet(file: UploadFile = File(...), email: EmailStr = For
         logger.warning("Continuing despite database error - task is already queued")
 
 
-    # 7. Send Email to the User
+    # 8. Send Email to the User
     logger.info(f"Sending confirmation email to: {email}, task_id: {task.id}")
     try:
         await send_task_email(email_to=email, file_name=file.filename, task_id=task.id)
@@ -173,13 +266,13 @@ async def upload_spreadsheet(file: UploadFile = File(...), email: EmailStr = For
             status_code=500, detail="Failed to send confirmation email."
         )
 
-    # 7. Return the Result
+    # 9. Return the Result
     logger.info(
         f"Upload process completed successfully - filename: {file.filename}, task_id: {task.id}, email: {email}"
     )
     return {
         "email": email,
-        "filename": file.filename,
+        "filename": random_filename_with_extension,
         "task_id": task.id,
         "message": "File uploaded and processing started. Check your email for the task ID.",
     }
