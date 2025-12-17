@@ -6,12 +6,12 @@ from wordcloud import WordCloud
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 
 from utils.file_utils import read_file
+from utils.sentiment import load_sentiment_model
 
 WORDCLOUD_EXCLUDE_WORDS = set().union(
     ENGLISH_STOP_WORDS,
     {"na","n/a","nil","null","nan","none","","no","comments","no comments",
      "not","applicable","not applicable","ok"})
-
 
 def generate_wordcloud_freq(text):
     words = [
@@ -58,10 +58,10 @@ def overall_wordcloud(file_path :str):
     neg_freq = generate_wordcloud_freq(neg_text)
 
     word_cloud_figs = {"positive": generate_wordcloud_image(
-            pos_freq if pos_freq else {"no": 1}, colormap="Greens"
+            pos_freq if pos_freq else {"No Positive Words Found": 1}, colormap="Greens"
         ),
         "negative": generate_wordcloud_image(
-            neg_freq if neg_freq else {"no": 1}, colormap="Reds"
+            neg_freq if neg_freq else {"No Negative Words Found": 1}, colormap="Reds"
         )
     }
 
@@ -86,5 +86,4 @@ def overall_wordcloud(file_path :str):
     plt.close(fig)
 
     return output_path
-
 

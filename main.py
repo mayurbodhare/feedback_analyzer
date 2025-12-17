@@ -22,6 +22,7 @@ from pathlib import Path
 
 from utils.treemap import build_treemap_figure
 from utils.word_cloud import overall_wordcloud
+from utils.word_cloud_q import save_question_wordclouds
 
 BASE_DIR = Path(__file__).resolve().parent
 UPLOAD_DIR = str(BASE_DIR / "uploads")
@@ -231,6 +232,23 @@ def word_cloud(filename: str):
         raise HTTPException(status_code=404, detail=f"{file_path}: File not found. ")
     try:
         output_path = overall_wordcloud(file_path)
+        return {
+            "status": "success",
+            "original_file": filename,
+            "sunburst_file" : os.path.basename(output_path),
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/overall_wordcloud_q/{filename}")
+def word_cloud_q(filename: str):
+    
+    file_path = os.path.join(UPLOAD_DIR,filename)
+    
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail=f"{file_path}: File not found. ")
+    try:
+        output_path = save_question_wordclouds(file_path)
         return {
             "status": "success",
             "original_file": filename,
