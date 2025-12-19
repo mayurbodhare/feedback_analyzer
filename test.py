@@ -50,7 +50,7 @@ fig = px.treemap(
 )
 
 # Save as interactive HTML
-obj = fig.write_html("treemap_3.html", full_html=False, include_plotlyjs='cdn')
+# obj = fig.write_html("treemap_3.html", full_html=False, include_plotlyjs='cdn')
 
 with open("treemap_2.json", "w") as f:
     f.write(fig.to_json())

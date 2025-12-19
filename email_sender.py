@@ -32,7 +32,7 @@ async def _send_brevo_email(
     # Add attachment if provided
     if attachment_path:
         if not os.path.isfile(attachment_path):
-            logger.error(f"Attachment file not found: {attachment_path}")
+            # logger.error(f"Attachment file not found: {attachment_path}")
             raise HTTPException(status_code=400, detail="Attachment file not found.")
 
         try:
@@ -40,7 +40,7 @@ async def _send_brevo_email(
                 file_content = f.read()
                 encoded_content = base64.b64encode(file_content).decode("utf-8")
         except Exception as e:
-            logger.error(f"Failed to read/encode attachment {attachment_path}: {e}")
+            # logger.error(f"Failed to read/encode attachment {attachment_path}: {e}")
             raise HTTPException(status_code=500, detail="Failed to process attachment.")
 
         data["attachment"] = [
@@ -59,9 +59,9 @@ async def _send_brevo_email(
                 timeout=30.0,  # Slightly longer timeout for attachments
             )
             response.raise_for_status()
-        logger.info(f"Email with attachment sent successfully to {to_email}")
+        # logger.info(f"Email with attachment sent successfully to {to_email}")
     except httpx.RequestError as e:
-        logger.error(f"Network error sending email to {to_email}: {e}", exc_info=True)
+        # logger.error(f"Network error sending email to {to_email}: {e}", exc_info=True)
         raise HTTPException(
             status_code=500, detail="Failed to send email due to network error."
         )
@@ -79,7 +79,7 @@ async def _send_brevo_email(
 async def send_task_email(email_to: str, file_name: str, task_id: str) -> None:
     """Sends initial task ID email (no attachment)."""
     if not settings.BREVO_API_KEY:
-        logger.error("Brevo API key is missing.")
+        # logger.error("Brevo API key is missing.")
         raise RuntimeError("Brevo API key not configured.")
 
     subject = "Your Spreadsheet Processing Task ID"
@@ -88,7 +88,7 @@ async def send_task_email(email_to: str, file_name: str, task_id: str) -> None:
         "You can use this ID to check the status of your processing job."
     )
 
-    logger.info(f"Sending task email to {email_to} for task {task_id}")
+    # logger.info(f"Sending task email to {email_to} for task {task_id}")
     await _send_brevo_email(
         to_email=email_to,
         subject=subject,
@@ -105,7 +105,7 @@ async def send_confirmation_email(file_path: str, email: str) -> None:
     `file_path` must be the full path to the processed output file.
     """
     if not settings.BREVO_API_KEY:
-        logger.error("Brevo API key is missing.")
+        # logger.error("Brevo API key is missing.")
         raise RuntimeError("Brevo API key not configured.")
 
     subject = "✅ Your Processed Spreadsheet Is Ready!"
@@ -115,7 +115,7 @@ async def send_confirmation_email(file_path: str, email: str) -> None:
         "Thank you for using our service!"
     )
 
-    logger.info(f"Sending confirmation email with attachment to {email}")
+    # logger.info(f"Sending confirmation email with attachment to {email}")
     await _send_brevo_email(
         to_email=email,
         subject=subject,
@@ -131,7 +131,7 @@ async def send_confirmation_email(file_path: str, email: str) -> None:
 # from fastapi import HTTPException
 # from config import settings
 
-# logger = logging.getLogger(__name__)
+# # logger = logging.get# logger(__name__)
 
 
 # async def send_task_email(email_to: str, file_name: str, task_id: str):
@@ -143,7 +143,7 @@ async def send_confirmation_email(file_path: str, email: str) -> None:
 #     SENDER_EMAIL = settings.SENDER_EMAIL
 
 #     if not BREVO_API_KEY:
-#         logger.error("Brevo API key is missing in settings.")
+#         # logger.error("Brevo API key is missing in settings.")
 #         raise RuntimeError("Brevo API key not configured in environment variables.")
 
 #     subject = "Your Spreadsheet Processing Task ID"
@@ -161,7 +161,7 @@ async def send_confirmation_email(file_path: str, email: str) -> None:
 #         "textContent": body,
 #     }
 
-#     logger.info(
+#     # logger.info(
 #         f"Attempting to send email to {email_to} for task {task_id} (file: {file_name})"
 #     )
 
@@ -174,10 +174,10 @@ async def send_confirmation_email(file_path: str, email: str) -> None:
 #                 timeout=20.0,
 #             )
 #             response.raise_for_status()
-#         logger.info(f"Email successfully sent to {email_to} for task {task_id}")
+#         # logger.info(f"Email successfully sent to {email_to} for task {task_id}")
 #     except httpx.RequestError as e:
 #         # Network-level error (e.g., DNS failure, refused connection)
-#         logger.error(
+#         # logger.error(
 #             f"Network error while sending email to {email_to}: {e}", exc_info=True
 #         )
 #         raise HTTPException(
@@ -185,7 +185,7 @@ async def send_confirmation_email(file_path: str, email: str) -> None:
 #         )
 #     except httpx.HTTPStatusError as e:
 #         # HTTP error (e.g., 4xx, 5xx)
-#         logger.error(
+#         # logger.error(
 #             f"Brevo API returned error {e.response.status_code}: {e.response.text} "
 #             f"for email to {email_to}, task {task_id}",
 #             exc_info=True,

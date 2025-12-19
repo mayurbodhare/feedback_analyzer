@@ -3,8 +3,14 @@ import os
 import plotly.graph_objects as go
 import plotly.express as px  
 from utils.file_utils import read_file
-
+from utils.db import update_task_stage, save_task_attribute
+from utils.sunburst import process_sunburst
+from db.models import TaskStage, Task
+from db.config import AsyncSessionLocal
 import pandas as pd
+import logging
+
+# logger = logging.get# logger(__name__)
 
 def preprocess_for_treemap(df, group_cols):
 
@@ -45,12 +51,12 @@ def preprocess_for_treemap(df, group_cols):
     return grouped
 
 
-def build_treemap_figure(file_path :str):
-
-    if not os.path.exists(file_path):
-        raise FileNotFoundError(f"File not found: {file_path}")
-    
-    df = read_file(file_path)
+def build_treemap_figure(df: pd.DataFrame = None, file_path :str = None):
+    if df is None:
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"File not found: {file_path}")
+        
+        df = read_file(file_path)
 
     level_options = {
         "Region": ["depute geography"],
@@ -121,9 +127,44 @@ def build_treemap_figure(file_path :str):
         paper_bgcolor="white"
     )
 
-    folder, filename = os.path.split(file_path)
-    name, ext = os.path.splitext(filename)
-    output_path = os.path.join(folder, f"{name}_treemap.html")
-    fig.write_html(output_path, full_html =True, include_plotlyjs ='cdn')
+    # folder, filename = os.path.split(file_path)
+    # name, ext = os.path.splitext(filename)
+    # output_path = os.path.join(folder, f"{name}_treemap.html")
+    # fig.write_html(output_path, full_html =True, include_plotlyjs ='cdn')
 
-    return output_path
+    return fig.to_json()
+
+
+async def process_treemap(
+    df: pd.DataFrame = None,
+    file_path: str = None,
+    email: str = None,
+    task_id: str = None,
+):
+    # logger.info(f"Processing treemap for file: {file_path}, email: {email}, task_id: {task_id}")
+    
+    if task_id:
+        await update_task_stage(task_id, TaskStage.TREEMAP_STAGE_START)
+
+    # Generate treemap as JSON string
+    treemap_json = build_treemap_figure(df=df, file_path=file_path)
+
+    if task_id:
+        # async with AsyncSessionLocal() as session:
+        #     task = await session.get(Task, task_id)
+        #     if task:
+        #         task.treemap = treemap_json  # Store JSON string directly in JSONB column
+        #         await session.commit()
+        #         # logger.info(f"Saved treemap JSON to DB for task {task_id}")
+        #     else:
+        #         # logger.error(f"Task {task_id} not found for treemap update.")
+        #         raise ValueError(f"Task {task_id} not found")
+
+        await save_task_attribute(task_id, "treemap", treemap_json)
+
+    if task_id:
+        await update_task_stage(task_id, TaskStage.TREEMAP_STAGE_COMPLETE)
+
+    # logger.info(f"Treemap processing completed for: {file_path}")
+    
+    await process_sunburst(df, file_path, email, task_id)

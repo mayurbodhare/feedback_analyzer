@@ -3,20 +3,23 @@ from transformers import pipeline
 import os
 import logging
 from utils.intent import process_intent
-from utils.file_utils import read_file, save_file
+from utils.file_utils import change_suffix_in_path, read_file, save_file
+from utils.load_sentiment_model import load_sentiment_model
 import pandas as pd
 
-from utils.change_task_status import update_task_stage
+from utils.db import update_task_stage
 from db import TaskStage
 
-logger = logging.getLogger(__name__)
-
+# logger = logging.get# logger(__name__)
+# logger.addHandler(logging.NullHandler())
+# logger.propagate = False
+# logger.setLevel(logging.CRITICAL)
 
 def load_sentiment_model():
-    logger.info("Loading sentiment analysis model...")
+    # logger.info("Loading sentiment analysis model...")
     model_path = ".\\models_dir\\distilbert-base-uncased-finetuned-sst-2-english"
     device = 0 if torch.cuda.is_available() else -1
-    logger.debug(f"Using device: {'GPU' if device == 0 else 'CPU'}")
+    # logger.debug(f"Using device: {'GPU' if device == 0 else 'CPU'}")
     return pipeline(
         "sentiment-analysis",
         model=model_path,
@@ -26,7 +29,7 @@ def load_sentiment_model():
 
 
 def sentiment_file(df: pd.DataFrame, file_path: str):
-    logger.info(f"Starting sentiment analysis for file: {file_path}")
+    # logger.info(f"Starting sentiment analysis for file: {file_path}")
 
     question_col = "question"
     answer_col = "translated_text"
@@ -59,12 +62,12 @@ def sentiment_file(df: pd.DataFrame, file_path: str):
             prompt = f"Question: {question}, Answer: {row[answer_col]}"
             prompts.append(prompt)
 
-    logger.info("Loading sentiment model...")
+    # logger.info("Loading sentiment model...")
     model = load_sentiment_model()
 
     batch_size = 16
     total = len(prompts)
-    logger.info(f"Processing {total} prompts in batches of {batch_size}")
+    # logger.info(f"Processing {total} prompts in batches of {batch_size}")
 
     for i in range(0, total, batch_size):
         batch_inputs = [x for x in prompts[i:i+batch_size] if x and x != "NA"]
@@ -89,32 +92,32 @@ def sentiment_file(df: pd.DataFrame, file_path: str):
                 pos_scores.append(next((r["score"] for r in res if r["label"] == "POSITIVE"), 0.0))
                 neg_scores.append(next((r["score"] for r in res if r["label"] == "NEGATIVE"), 0.0))
 
-    df["Sentiment"] = sentiments
-    df["Sentiment Score"] = scores
-    df["Positive Score"] = pos_scores
-    df["Negative Score"] = neg_scores
+    df["sentiment"] = sentiments
+    df["sentiment score"] = scores
+    df["positive score"] = pos_scores
+    df["negative score"] = neg_scores
 
-    folder, filename = os.path.split(file_path)
-    name, ext = os.path.splitext(filename)
-    new_filename = f"{name}_sentiment_done{ext}"
-    output_path = os.path.join(folder, new_filename)
+    output_path = change_suffix_in_path(file_path, "sentiment")
 
-    logger.info(f"Saving sentiment results to: {output_path}")
+    # logger.info(f"Saving sentiment results to: {output_path}")
     save_file(df, output_path)
 
     return output_path, df
 
 
-async def process_sentiment(df: pd.DataFrame, file_path: str, email: str, task_id: str = None):
-    logger.info(f"Processing sentiment for file: {file_path}, email: {email}")
+async def process_sentiment(df: pd.DataFrame = None, file_path: str = None, email: str = None, task_id: str = None):
+    # logger.info(f"Processing sentiment for file: {file_path}, email: {email}")
 
     if task_id:
         await update_task_stage(task_id, TaskStage.SENTIMENT_STAGE_START)
+
+    if df is None:
+        df = read_file(file_path)
 
     output_path, new_df = sentiment_file(df, file_path)
 
     if task_id:
         await update_task_stage(task_id, TaskStage.SENTIMENT_STAGE_COMPLETE)
-
-    await process_intent(new_df, file_path, email, task_id)
-    logger.info(f"Sentiment processing completed for: {file_path}")
+    # logger.info(f"Sentiment processing completed for: {file_path}")
+    
+    await process_intent(new_df, output_path, email, task_id)

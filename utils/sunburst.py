@@ -1,13 +1,22 @@
 import os
 import plotly.graph_objects as go
-import plotly.express as px  # Fixed typo
+import plotly.express as px  
 from utils.file_utils import read_file
+from utils.db import update_task_stage, save_task_attribute
+from db.models import TaskStage, Task, TaskStatus
+from db.config import AsyncSessionLocal
+import pandas as pd
+import logging
+from email_sender import send_confirmation_email
 
-def build_sunburst_figure(file_path: str):
-    if not os.path.exists(file_path):
-        raise FileNotFoundError(f"File not found: {file_path}")
-    
-    df = read_file(file_path)
+# logger = logging.get# logger(__name__)
+
+def build_sunburst_figure(df: pd.DataFrame = None, file_path: str = None):
+    if df is None:
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"File not found: {file_path}")
+        
+        df = read_file(file_path)
 
     level_options = {
         "Region": ["depute geography"],
@@ -61,10 +70,50 @@ def build_sunburst_figure(file_path: str):
         paper_bgcolor="white"
     )
 
-    # Save in same folder
-    folder, filename = os.path.split(file_path)
-    name, ext = os.path.splitext(filename)
-    output_path = os.path.join(folder, f"{name}_sunburst.html")
-    fig.write_html(output_path, full_html =True, include_plotlyjs ="cdn")
+    # # Save in same folder
+    # folder, filename = os.path.split(file_path)
+    # name, ext = os.path.splitext(filename)
+    # output_path = os.path.join(folder, f"{name}_sunburst.html")
+    # fig.write_html(output_path, full_html =True, include_plotlyjs ="cdn")
 
-    return output_path
+    return fig.to_json()
+
+
+async def process_sunburst(
+    df: pd.DataFrame = None,
+    file_path: str = None,
+    email: str = None,
+    task_id: str = None,
+):
+    # logger.info(f"Processing sunburst for file: {file_path}, email: {email}, task_id: {task_id}")
+    
+    if task_id:
+        await update_task_stage(task_id, TaskStage.SUNBURST_STAGE_START)
+
+    
+    # Generate sunburst figure as JSON string
+    sunburst_json = build_sunburst_figure(df=df, file_path=file_path)
+
+    if task_id:
+        async with AsyncSessionLocal() as session:
+            # task = await session.get(Task, task_id)
+            # if task:
+            #     task.sunburst = sunburst_json  # Store JSON string in JSONB column
+            #     await session.commit()
+            #     # logger.info(f"Saved sunburst JSON to DB for task {task_id}")
+            # else:
+            #     # logger.error(f"Task {task_id} not found for sunburst update.")
+            #     raise ValueError(f"Task {task_id} not found")
+
+            await save_task_attribute(task_id, "sunburst", sunburst_json)
+
+    if task_id:
+        await update_task_stage(task_id, TaskStage.SUNBURST_STAGE_COMPLETE, TaskStatus.COMPLETED)
+
+    # logger.info(f"Sunburst processing completed for: {file_path}")
+
+    if task_id and email:
+        await send_confirmation_email(email=email, file_path=file_path)
+
+    
+

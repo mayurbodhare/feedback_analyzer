@@ -129,7 +129,7 @@ Open a new terminal (PowerShell or Command Prompt), activate the virtual environ
 
 ```powershell
 poetry shell
-celery -A celery_worker.celery_app worker --pool=solo --loglevel=info
+celery -A worker.celery_worker.celery_app worker --pool=solo --loglevel=info
 ```
 
 **Note:** On Windows, you may need to use the `--pool=solo` flag as shown above.

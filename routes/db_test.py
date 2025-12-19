@@ -3,13 +3,13 @@ import logging
 from fastapi.responses import JSONResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from logger import setup_logging
+# from  logger import setup_logging
 
 from db import get_db
 from db import Task, TaskStatus, TaskStage
 
-setup_logging()
-logger = logging.getLogger(__name__)
+# setup_logging()
+# logger = logging.get# logger(__name__)
 
 router = APIRouter()
 # ========== TEST ENDPOINTS FOR DATABASE CRUD OPERATIONS ==========
@@ -30,7 +30,7 @@ async def create_test_task(
         await db.commit()
         await db.refresh(task)
         
-        logger.info(f"Task created: {task.job_id}")
+        # logger.info(f"Task created: {task.job_id}")
         return {
             "message": "Task created successfully",
             "task": {
@@ -45,7 +45,7 @@ async def create_test_task(
         }
     except Exception as e:
         await db.rollback()
-        logger.error(f"Error creating task: {str(e)}")
+        # logger.error(f"Error creating task: {str(e)}")
         raise
 
 
@@ -59,7 +59,7 @@ async def get_all_test_tasks(db: AsyncSession = Depends(get_db)):
         result = await db.execute(select(Task).order_by(Task.created_at.desc()))
         tasks = result.scalars().all()
         
-        logger.info(f"Retrieved {len(tasks)} tasks")
+        # logger.info(f"Retrieved {len(tasks)} tasks")
         return {
             "message": "Tasks retrieved successfully",
             "count": len(tasks),
@@ -77,7 +77,7 @@ async def get_all_test_tasks(db: AsyncSession = Depends(get_db)):
             ]
         }
     except Exception as e:
-        logger.error(f"Error retrieving tasks: {str(e)}")
+        # logger.error(f"Error retrieving tasks: {str(e)}")
         raise
 
 
@@ -97,7 +97,7 @@ async def get_test_task(job_id: str, db: AsyncSession = Depends(get_db)):
                 content={"message": "Task not found", "job_id": job_id}
             )
         
-        logger.info(f"Retrieved task: {task.job_id}")
+        # logger.info(f"Retrieved task: {task.job_id}")
         return {
             "message": "Task retrieved successfully",
             "task": {
@@ -118,7 +118,7 @@ async def get_test_task(job_id: str, db: AsyncSession = Depends(get_db)):
             }
         }
     except Exception as e:
-        logger.error(f"Error retrieving task: {str(e)}")
+        # logger.error(f"Error retrieving task: {str(e)}")
         raise
 
 
@@ -155,7 +155,7 @@ async def update_test_task(
         await db.commit()
         await db.refresh(task)
         
-        logger.info(f"Task updated: {task.job_id}")
+        # logger.info(f"Task updated: {task.job_id}")
         return {
             "message": "Task updated successfully",
             "task": {
@@ -175,7 +175,7 @@ async def update_test_task(
         )
     except Exception as e:
         await db.rollback()
-        logger.error(f"Error updating task: {str(e)}")
+        # logger.error(f"Error updating task: {str(e)}")
         raise
 
 
@@ -198,14 +198,14 @@ async def delete_test_task(job_id: str, db: AsyncSession = Depends(get_db)):
         await db.delete(task)
         await db.commit()
         
-        logger.info(f"Task deleted: {job_id}")
+        # logger.info(f"Task deleted: {job_id}")
         return {
             "message": "Task deleted successfully",
             "job_id": job_id
         }
     except Exception as e:
         await db.rollback()
-        logger.error(f"Error deleting task: {str(e)}")
+        # logger.error(f"Error deleting task: {str(e)}")
         raise
 
 
@@ -223,7 +223,7 @@ async def get_tasks_by_email(email: str, db: AsyncSession = Depends(get_db)):
         )
         tasks = result.scalars().all()
         
-        logger.info(f"Retrieved {len(tasks)} tasks for email: {email}")
+        # logger.info(f"Retrieved {len(tasks)} tasks for email: {email}")
         return {
             "message": "Tasks retrieved successfully",
             "email": email,
@@ -240,5 +240,5 @@ async def get_tasks_by_email(email: str, db: AsyncSession = Depends(get_db)):
             ]
         }
     except Exception as e:
-        logger.error(f"Error retrieving tasks by email: {str(e)}")
+        # logger.error(f"Error retrieving tasks by email: {str(e)}")
         raise

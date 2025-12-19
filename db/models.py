@@ -31,6 +31,8 @@ class TaskStage(str, enum.Enum):
     DISTRIBUTION_CHART_STAGE_COMPLETE = "distribution_chart_stage_complete"
     WORDCLOUD_STAGE_START = "wordcloud_stage_start"
     WORDCLOUD_STAGE_COMPLETE = "wordcloud_stage_complete"
+    WORDCLOUD_BY_QUESTIONS_STAGE_START = "wordcloud_by_questions_stage_start"
+    WORDCLOUD_BY_QUESTIONS_STAGE_COMPLETE = "wordcloud_by_questions_stage_complete"
     TREEMAP_STAGE_START = "treemap_stage_start"
     TREEMAP_STAGE_COMPLETE = "treemap_stage_complete"
     SUNBURST_STAGE_START = "sunburst_stage_start"
@@ -61,6 +63,7 @@ class Task(Base):
     # Results storage
     distribution_chart = Column(ARRAY(String), nullable=True)
     wordcloud = Column(ARRAY(String), nullable=True)
+    wordcloud_by_questions = Column(JSONB, nullable=True)
     treemap = Column(JSONB, nullable=True)
     sunburst = Column(JSONB, nullable=True)
     summary = Column(Text, nullable=True)

@@ -1,108 +1,17 @@
-from collections import Counter
-from wordcloud import WordCloud
-from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+import os
+from PIL import Image, ImageDraw, ImageFont
+from utils.file_utils import read_file
+from utils.load_sentiment_model import load_sentiment_model
+from utils.word_cloud import generate_wordcloud_freq, generate_wordcloud_image
+import re
 from db.config import AsyncSessionLocal
 from db.models import Task, TaskStage
-from utils.db import update_task_stage, save_task_attribute
-from utils.file_utils import read_file
-# from utils.word_cloud_by_questions import process_wordcloud_by_questions
-import matplotlib.pyplot as plt
+from utils.db import update_task_stage,  save_task_attribute
 import pandas as pd
 import logging
-import os
-
-from PIL import Image, ImageDraw, ImageFont
-from utils.load_sentiment_model import load_sentiment_model
-# from utils.word_cloud import generate_wordcloud_freq, generate_wordcloud_image
-import re
 from utils.treemap import process_treemap
 
-logger = logging.getLogger(__name__)
-
-WORDCLOUD_EXCLUDE_WORDS = set().union(
-    ENGLISH_STOP_WORDS,
-    {
-        "na",
-        "n/a",
-        "nil",
-        "null",
-        "nan",
-        "none",
-        "",
-        "no",
-        "comments",
-        "no comments",
-        "not",
-        "applicable",
-        "not applicable",
-        "ok",
-    },
-)
-
-
-def generate_wordcloud_freq(text):
-    words = [word.strip().lower() for word in text.split() if word.isalpha()]
-    return dict(Counter([w for w in words if w not in WORDCLOUD_EXCLUDE_WORDS]))
-
-
-def generate_wordcloud_image(freq_dict, colormap):
-    wc = WordCloud(
-        width=680, height=480, background_color="white", colormap=colormap
-    ).generate_from_frequencies(freq_dict)
-
-    return wc
-
-
-def overall_wordcloud(df: pd.DataFrame = None, file_path: str= None):
-
-
-    if df is None:
-        if not os.path.exists(file_path):
-            raise FileNotFoundError(f"File not found: {file_path}")
-        df = read_file(file_path)
-
-    pos_text = " ".join(
-        df[df["sentiment"] == "POSITIVE"]["translated_text"].dropna().astype(str)
-    )
-
-    neg_text = " ".join(
-        df[df["sentiment"] == "NEGATIVE"]["translated_text"].dropna().astype(str)
-    )
-
-    pos_freq = generate_wordcloud_freq(pos_text)
-    neg_freq = generate_wordcloud_freq(neg_text)
-
-    word_cloud_figs = {
-        "positive": generate_wordcloud_image(
-            pos_freq if pos_freq else {"no": 1}, colormap="Greens"
-        ),
-        "negative": generate_wordcloud_image(
-            neg_freq if neg_freq else {"no": 1}, colormap="Reds"
-        ),
-    }
-
-    # Create a new figure with side-by-side subplots
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 7))
-
-    # Plot the positive wordcloud
-    ax1.imshow(word_cloud_figs["positive"], interpolation="bilinear")
-    ax1.axis("off")
-    ax1.set_title("Positive Sentiment")
-
-    # Plot the negative wordcloud
-    ax2.imshow(word_cloud_figs["negative"], interpolation="bilinear")
-    ax2.axis("off")
-    ax2.set_title("Negative Sentiment")
-
-    folder, filename = os.path.split(file_path)
-    name, ext = os.path.splitext(filename)
-    output_path = os.path.join(folder, f"{name}_overall_worclouds.jpeg")
-
-    fig.savefig(output_path, format="jpg", bbox_inches="tight", dpi=300)
-    plt.close(fig)
-
-    return output_path
-
+# logger = logging.get# logger(__name__)
 
 
 # Sentiment mapping
@@ -230,43 +139,3 @@ async def process_wordcloud_by_questions(
     # logger.info(f"Wordcloud by questions processing completed for: {file_path}")
 
     await process_treemap(df, file_path, email, task_id)
-
-
-
-async def process_wordcloud(
-    df: pd.DataFrame = None,
-    file_path: str = None,
-    email: str = None,
-    task_id: str = None,
-):
-    logger.info(f"Processing wordcloud for file: {file_path}, email: {email}")
-    
-    if task_id:
-        await update_task_stage(task_id, TaskStage.WORDCLOUD_STAGE_START)
-
-    
-    # Generate the wordcloud image and get its path
-    wordcloud_path = overall_wordcloud(df=df, file_path=file_path)
-
-    if task_id:
-        # Save the path to the DB (as a list, per ARRAY(String) schema)
-        # async with AsyncSessionLocal() as session:
-        #     task = await session.get(Task, task_id)
-        #     if task:
-        #         task.wordcloud = [wordcloud_path]  # Store as list
-        #         await session.commit()
-        #         logger.info(f"Saved wordcloud path to DB: {wordcloud_path}")
-        #     else:
-        #         logger.error(f"Task with id {task_id} not found for wordcloud update.")
-        #         raise ValueError(f"Task {task_id} not found")
-
-        await save_task_attribute(task_id, "wordcloud", [wordcloud_path])
-
-    if task_id:
-        await update_task_stage(task_id, TaskStage.WORDCLOUD_STAGE_COMPLETE)
-
-    logger.info(f"Wordcloud processing completed for: {file_path}")
-
-    await process_wordcloud_by_questions(df, file_path, email, task_id)
-
-    

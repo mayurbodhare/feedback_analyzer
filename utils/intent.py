@@ -1,16 +1,20 @@
 import torch
 from transformers import pipeline
 import os
-from utils.file_utils import read_file, save_file
+from utils.file_utils import change_suffix_in_path, read_file, save_file
 import pandas as pd
 from email_sender import send_confirmation_email
 import logging
 
-from utils.change_task_status import update_task_stage
+from utils.db import update_task_stage
+from utils.donut_chart import process_distribution_charts
+
 from db import TaskStage
 
-logger = logging.getLogger(__name__)
-
+# logger = logging.get# logger(__name__)
+# logger.addHandler(logging.NullHandler())
+# logger.propagate = False
+# logger.setLevel(logging.CRITICAL)
 
 POSITIVE_INTENTS = ["team appreciation","process appreciation","service satisfaction","general praise","irrelevant"]
 NEGATIVE_INTENTS = ["technical issue","process issue","support dissatisfaction","resource complaint","irrelevant"]
@@ -39,7 +43,7 @@ def intent_file(df: pd.DataFrame, file_path: str):
     df.columns = [c.strip() for c in df.columns]
 
     # Validate columns
-    required_columns = ["question", "translated_text", "Sentiment"]
+    required_columns = ["question", "translated_text", "sentiment"]
     for col in required_columns:
         if col not in df.columns:
             raise KeyError(f"Missing required column: {col}")
@@ -49,12 +53,12 @@ def intent_file(df: pd.DataFrame, file_path: str):
 
     for _, row in df.iterrows():
 
-        sentiment = str(row["Sentiment"]).strip().lower()
+        sentiment = str(row["sentiment"]).strip().lower()
     
         if sentiment == "neutral":
             results.append({
-                "Intent": "no feedback",
-                "Intent Score": None
+                "intent": "no feedback",
+                "intent score": None
             })
             continue
 
@@ -72,8 +76,8 @@ def intent_file(df: pd.DataFrame, file_path: str):
         )
 
         results.append({
-            "Intent": res["labels"][0],
-            "Intent Score": res["scores"][0]
+            "intent": res["labels"][0],
+            "intent score": res["scores"][0]
         })
 
     intent_df = pd.DataFrame(results)
@@ -81,10 +85,7 @@ def intent_file(df: pd.DataFrame, file_path: str):
     merged = pd.concat([df, intent_df], axis=1)
     merged.columns = deduplicate_columns(merged.columns)
 
-    folder, filename = os.path.split(file_path)
-    name, ext = os.path.splitext(filename)
-    new_filename = f"{name}_intent_done{ext}"
-    output_path = os.path.join(folder, new_filename)
+    output_path = change_suffix_in_path(file_path, "intent")
 
     # IMPORTANT FIX
     save_file(merged, output_path)
@@ -92,16 +93,20 @@ def intent_file(df: pd.DataFrame, file_path: str):
     return output_path, merged
 
 
-async def process_intent(df: pd.DataFrame, file_path: str, email: str, task_id: str = None):
-    logger.info(f"Processing intent for file: {file_path}, email: {email}")
+async def process_intent(df: pd.DataFrame = None, file_path: str = None, email: str = None, task_id: str = None):
+    # logger.info(f"Processing intent for file: {file_path}, email: {email}")
     if task_id:
         await update_task_stage(task_id, TaskStage.INTENT_STAGE_START)
+
+    if df is None:
+        df = read_file(file_path)
 
     output_path, new_df = intent_file(df, file_path)
 
     if task_id:
         await update_task_stage(task_id, TaskStage.INTENT_STAGE_COMPLETE)
 
-    await send_confirmation_email(output_path, email)
-
-    logger.info(f"Intent processing completed for: {file_path}")
+    # logger.info(f"Intent processing completed for: {file_path}")
+    
+    await process_distribution_charts(new_df, output_path, email, task_id)
+    

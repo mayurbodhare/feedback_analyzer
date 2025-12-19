@@ -250,21 +250,21 @@ async def upload_spreadsheet(file: UploadFile = File(...), email: EmailStr = For
 
 
     # 8. Send Email to the User
-    logger.info(f"Sending confirmation email to: {email}, task_id: {task.id}")
-    try:
-        await send_task_email(email_to=email, file_name=file.filename, task_id=task.id)
-        logger.info(f"Confirmation email sent successfully to: {email}")
-    except HTTPException:
-        # Re-raise if it's already an HTTP exception
-        logger.error(f"HTTP exception while sending email to {email}")
-        raise
-    except Exception as e:
-        # Fallback for unexpected errors
-        logger.error(f"Unexpected email error for {email}: {str(e)}")
-        print(f"Unexpected email error: {e}")
-        raise HTTPException(
-            status_code=500, detail="Failed to send confirmation email."
-        )
+    # logger.info(f"Sending confirmation email to: {email}, task_id: {task.id}")
+    # try:
+    #     await send_task_email(email_to=email, file_name=file.filename, task_id=task.id)
+    #     logger.info(f"Confirmation email sent successfully to: {email}")
+    # except HTTPException:
+    #     # Re-raise if it's already an HTTP exception
+    #     logger.error(f"HTTP exception while sending email to {email}")
+    #     raise
+    # except Exception as e:
+    #     # Fallback for unexpected errors
+    #     logger.error(f"Unexpected email error for {email}: {str(e)}")
+    #     print(f"Unexpected email error: {e}")
+    #     raise HTTPException(
+    #         status_code=500, detail="Failed to send confirmation email."
+    #     )
 
     # 9. Return the Result
     logger.info(
