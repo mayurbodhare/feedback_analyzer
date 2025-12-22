@@ -4,7 +4,7 @@ from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 from db.config import AsyncSessionLocal
 from db.models import Task, TaskStage
 from utils.db import update_task_stage, save_task_attribute
-from utils.file_utils import read_file
+from utils.file_utils import read_file, get_path_without_suffix
 # from utils.word_cloud_by_questions import process_wordcloud_by_questions
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -133,9 +133,9 @@ def save_question_wordclouds(df: pd.DataFrame = None, file_path: str = None):
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"File not found: {file_path}")
         df = read_file(file_path)
-
+    file_name = get_path_without_suffix(file_path)
     question_col = "question"
-    output_dir = "question_wordclouds"
+    output_dir = "{name}".format(name=file_name)
     sentiment_model = load_sentiment_model()
 
     os.makedirs(output_dir, exist_ok=True)

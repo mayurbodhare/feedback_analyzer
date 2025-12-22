@@ -3,6 +3,7 @@ from fastapi import APIRouter, UploadFile, HTTPException, File, Form, Depends, R
 from pydantic import EmailStr
 import uuid
 import os
+import json
 import logging
 from worker.celery_worker import process_spreadsheet_task
 from email_sender import send_task_email
@@ -17,6 +18,8 @@ from db import get_db
 from db import Task, TaskStatus, TaskStage
 from utils.column_validator import validate_columns, rename_columns_to_standard
 from utils.file_utils import read_file
+
+from utils.normalize_filename import normalize_image_path
 
 # Configure logger
 logger = logging.getLogger(__name__)
@@ -423,3 +426,83 @@ async def get_task_results(task_id: str, db: AsyncSession = Depends(get_db)):
     except Exception as e:
         logger.error(f"Error retrieving results for task {task_id}: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to retrieve task results.")
+    
+
+@router.get("/analyze/{job_id}", response_class=HTMLResponse)
+async def analyze_task_results(
+    request: Request,
+    job_id: str,
+    db: AsyncSession = Depends(get_db)
+):
+    """
+    Serve an interactive analysis dashboard (treemap, sunburst, charts, summary)
+    for a completed task. Renders HTML with embedded Plotly visualizations.
+    """
+    logger.info(f"Analysis dashboard requested for job_id: {job_id}")
+
+    try:
+        result = await db.execute(select(Task).where(Task.job_id == job_id))
+        task = result.scalar_one_or_none()
+
+        if not task:
+            logger.warning(f"Task not found for job_id: {job_id}")
+            raise HTTPException(status_code=404, detail="Task not found")
+
+        if task.status != TaskStatus.COMPLETED:
+            logger.warning(f"Task {job_id} not completed. Current status: {task.status.value}")
+            # Optionally redirect to status page or show loading UI
+            return templates.TemplateResponse(
+                "upload.html",  # or a custom 'pending.html'
+                {
+                    "request": request,
+                    "error": f"Task is not yet completed. Current status: {task.status.value}",
+                    "job_id": job_id,
+                },
+                status_code=400
+            )
+
+        # Prepare data for template
+        # All fields are optional — handle None gracefully
+        treemap_data =  json.loads(task.treemap) or {}
+        sunburst_data = json.loads(task.sunburst) or  {}
+        distribution_charts = task.distribution_chart or []  # e.g., [sentiment_donut_url, intent_donut_url]
+        wordcloud_paths = task.wordcloud or []
+        wordcloud_by_questions = task.wordcloud_by_questions or []
+        summary = task.summary or "No summary available."
+
+        # Extract file_id for image paths (e.g., for static-serving)
+        file_id = task.file_id or job_id[:8]
+
+        # Optional: serve images from /uploads/ (ensure static files are accessible)
+        # e.g., /uploads/{file_id}_intent_donut.jpeg → assume uploads is symlinked or served statically
+
+        logger.info(f"Rendering analysis for completed job_id: {job_id}")
+
+        
+
+        return templates.TemplateResponse(
+            "analyze.html",  
+            {
+                "request": request,
+                "job_id": job_id,
+                "email": task.email,
+                "created_at": task.created_at.isoformat() if task.created_at else "",
+                "completed_at": task.completed_at.isoformat() if task.completed_at else "",
+                # Plotly JSON structures (must be valid JS objects)
+                "treemap_json": treemap_data,
+                "sunburst_json": sunburst_data,
+                # # Image paths
+                "distribution_charts": distribution_charts,
+                "wordcloud_paths": wordcloud_paths,
+                "wordcloud_by_questions": wordcloud_by_questions,
+                # # Textual
+                # "summary": summary,
+                # "file_id": file_id,
+            }
+        )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.exception(f"Error rendering analysis for job_id {job_id}: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to generate analysis dashboard.")
