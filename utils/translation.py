@@ -6,7 +6,7 @@ import pandas as pd
 import logging
 from utils.file_utils import read_file, save_file, change_suffix_in_path
 from utils.sentiment import process_sentiment
-from utils.db import update_task_stage
+from utils.db import update_task_stage, save_task_attribute
 from db import TaskStage
 
 
@@ -112,6 +112,7 @@ async def process_translate(df: pd.DataFrame = None, file_path: str = None, emai
 
     if task_id:
         await update_task_stage(task_id, TaskStage.TRANSLATION_STAGE_COMPLETE)
+        await save_task_attribute(task_id, "output_file_path", output_path)
 
     # logger.info(f"Translation processing completed for: {file_path}")
     

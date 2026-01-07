@@ -101,7 +101,7 @@ async def process_distribution_charts(
     
     if task_id:
         await update_task_stage(task_id, TaskStage.DISTRIBUTION_CHART_STAGE_START)
-
+        await save_task_attribute(task_id, "output_file_path", file_path)
     # Generate charts and get paths
     chart_paths = sentiment_intent_donut_charts(df, file_path)
     print("#" * 100)
@@ -120,9 +120,9 @@ async def process_distribution_charts(
                 # logger.warning(f"Task with id {task_id} not found for updating chart paths.")
         
         await save_task_attribute(task_id, "distribution_chart", chart_paths)
-        print("*" * 100)
+        # print("*" * 100)
         await update_task_stage(task_id, TaskStage.DISTRIBUTION_CHART_STAGE_COMPLETE)
-        print("$" * 100)
+        # print("$" * 100)
     # logger.info(f"Distribution charts processing completed for: {file_path}")
     print("Distribution charts processing completed\n" * 10)
     await process_wordcloud(df, file_path, email, task_id)

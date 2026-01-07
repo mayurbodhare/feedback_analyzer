@@ -78,6 +78,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             padding: 24px;
+            margin-top: 24px;
         }
 
         .chart-title {
@@ -246,6 +247,28 @@
             <pre class="summary">{{ summary }}</pre>
         </div>
         -->
+        <div class="chart-container" style="margin-top: 200px;">
+            <div class="chart-title">Executive Summary (Negative Feedback)</div>
+            <div>
+                <label for="level-select">Select Level:</label>
+                <select id="level-select" style="margin-left: 10px; padding: 8px; border-radius: 4px;">
+                    <option value="">-- Select Level --</option>
+                </select>
+
+                <label for="entity-select" style="margin-left: 20px;">Select Entity:</label>
+                <select id="entity-select" style="margin-left: 10px; padding: 8px; border-radius: 4px;">
+                    <option value="">-- Select Entity --</option>
+                </select>
+
+                <button id="generate-summary" style="margin-left: 20px; padding: 8px 16px; background-color: #3182ce; color: white; border: none; border-radius: 4px; cursor: pointer;">Generate Summary</button>
+
+                <div id="summary-result" style="margin-top: 20px; padding: 16px; background-color: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0;">
+                    <p>Select a level and entity to generate a summary of negative feedback.</p>
+                </div>
+            </div>
+        </div>
+        
+
     </div>
 
     <script>
@@ -256,6 +279,80 @@
         {% if sunburst_json and sunburst_json.data %}
             Plotly.newPlot("sunburst", {{ sunburst_json.data | tojson | safe }}, {{ sunburst_json.layout | tojson | safe }});
         {% endif %}
+
+
+        // Fetch levels and entities when the page loads
+            document.addEventListener('DOMContentLoaded', function() {
+                const jobId = "{{ job_id }}";
+                const levelSelect = document.getElementById('level-select');
+                const entitySelect = document.getElementById('entity-select');
+                const generateSummaryBtn = document.getElementById('generate-summary');
+                const summaryResult = document.getElementById('summary-result');
+
+                // Fetch available levels and entities
+                fetch(`/api/v1/analyze/${jobId}/levels`)
+                    .then(response => response.json())
+
+                    .then(data => {
+                        // Populate level dropdown
+                        console.log("+++++++++++++")
+                        console.log(data);
+                        console.log("+++++++++++++")
+                        data.levels.forEach(level => {
+                            const option = document.createElement('option');
+                            option.value = level;
+                            option.textContent = level.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                            levelSelect.appendChild(option);
+                        });
+
+                        // Update entity dropdown when level is selected
+                        levelSelect.addEventListener('change', function() {
+                            const selectedLevel = this.value;
+                            entitySelect.innerHTML = '<option value="">-- Select Entity --</option>';
+
+                            if (selectedLevel && data.entities[selectedLevel]) {
+                                data.entities[selectedLevel].forEach(entity => {
+                                    const option = document.createElement('option');
+                                    option.value = entity;
+                                    option.textContent = entity;
+                                    entitySelect.appendChild(option);
+                                });
+                            }
+                        });
+
+                        // Generate summary when button is clicked
+                        generateSummaryBtn.addEventListener('click', function() {
+                            const selectedLevel = levelSelect.value;
+                            const selectedEntity = entitySelect.value;
+
+                            if (!selectedLevel || !selectedEntity) {
+                                summaryResult.innerHTML = '<p style="color: #e53e3e;">Please select both a level and an entity.</p>';
+                                return;
+                            }
+
+                            summaryResult.innerHTML = '<p>Generating summary...</p>';
+
+                            fetch(`/api/v1/summary/${encodeURIComponent(selectedLevel)}/${encodeURIComponent(selectedEntity)}?job_id=${jobId}`)
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.summary) {
+                                        summaryResult.innerHTML = `<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${data.summary}</pre>`;
+                                    } else if (data.error) {
+                                        summaryResult.innerHTML = `<p style="color: #e53e3e;">${data.error}</p>`;
+                                    } else {
+                                        summaryResult.innerHTML = '<p>No summary available.</p>';
+                                    }
+                                })
+                                .catch(error => {
+                                    summaryResult.innerHTML = `<p style="color: #e53e3e;">Failed to generate summary: ${error.message}</p>`;
+                                });
+                        });
+                    })
+                    .catch(error => {
+                        summaryResult.innerHTML = `<p style="color: #e53e3e;">Failed to load levels and entities: ${error.message}</p>`;
+                    });
+            });
+
     </script>
 </body>
 

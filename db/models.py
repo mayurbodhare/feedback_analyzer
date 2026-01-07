@@ -61,6 +61,7 @@ class Task(Base):
     retry_count = Column(Integer, default=0, nullable=False)
 
     # Results storage
+    output_file_path = Column(String(100), nullable=True)
     distribution_chart = Column(ARRAY(String), nullable=True)
     wordcloud = Column(ARRAY(String), nullable=True)
     wordcloud_by_questions = Column(JSONB, nullable=True)

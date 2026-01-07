@@ -6,7 +6,7 @@ import pandas as pd
 from email_sender import send_confirmation_email
 import logging
 
-from utils.db import update_task_stage
+from utils.db import save_task_attribute, update_task_stage
 from utils.donut_chart import process_distribution_charts
 
 from db import TaskStage
@@ -93,6 +93,7 @@ def intent_file(df: pd.DataFrame, file_path: str):
     return output_path, merged
 
 
+
 async def process_intent(df: pd.DataFrame = None, file_path: str = None, email: str = None, task_id: str = None):
     # logger.info(f"Processing intent for file: {file_path}, email: {email}")
     if task_id:
@@ -105,7 +106,7 @@ async def process_intent(df: pd.DataFrame = None, file_path: str = None, email: 
 
     if task_id:
         await update_task_stage(task_id, TaskStage.INTENT_STAGE_COMPLETE)
-
+        await save_task_attribute(task_id, "output_file_path", output_path)
     # logger.info(f"Intent processing completed for: {file_path}")
     
     await process_distribution_charts(new_df, output_path, email, task_id)

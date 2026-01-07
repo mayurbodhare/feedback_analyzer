@@ -7,7 +7,7 @@ from utils.file_utils import change_suffix_in_path, read_file, save_file
 from utils.load_sentiment_model import load_sentiment_model
 import pandas as pd
 
-from utils.db import update_task_stage
+from utils.db import update_task_stage, save_task_attribute
 from db import TaskStage
 
 # logger = logging.get# logger(__name__)
@@ -118,6 +118,7 @@ async def process_sentiment(df: pd.DataFrame = None, file_path: str = None, emai
 
     if task_id:
         await update_task_stage(task_id, TaskStage.SENTIMENT_STAGE_COMPLETE)
+        await save_task_attribute(task_id, "output_file_path", output_path)
     # logger.info(f"Sentiment processing completed for: {file_path}")
     
     await process_intent(new_df, output_path, email, task_id)
